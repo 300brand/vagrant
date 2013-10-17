@@ -12,7 +12,7 @@ The List
 1. Aberlour
 1. AlltABhainne
 1. AnCnoc
-1. Ardbeg
+1. __Ardbeg__
 1. Ardmore
 1. Arran
 1. Auchentoshan
@@ -26,7 +26,7 @@ The List
 1. Benromach
 1. Bladnoch
 1. BlairAthol
-1. Bowmore
+1. __Bowmore__
 1. Brackla
 1. Braeval
 1. Bruichladdich
@@ -41,7 +41,7 @@ The List
 1. Craigellachie
 1. Dailuaine
 1. DallasDhu
-1. Dalwhinnie
+1. __Dalwhinnie__
 1. Deanston
 1. Drumguish
 1. Dufftown
@@ -57,7 +57,7 @@ The List
 1. GlenElgin
 1. Glenesk
 1. Glenfarclas
-1. Glenfiddich
+1. __Glenfiddich__
 1. GlenFlagler
 1. GlenGarioch
 1. Glenglassaugh
@@ -68,7 +68,7 @@ The List
 1. Glenlochy
 1. Glenlossie
 1. GlenMhor
-1. Glenmorangie
+1. __Glenmorangie__
 1. GlenMoray
 1. GlenOrd
 1. Glenrothes
@@ -87,7 +87,7 @@ The List
 1. Knockando
 1. Ladyburn
 1. Lagavulin
-1. Laphroaig
+1. __Laphroaig__
 1. Linkwood
 1. Littlemill
 1. LochLomond
@@ -100,7 +100,7 @@ The List
 1. Mortlach
 1. NorthPort
 1. Oban
-1. OldPulteney
+1. __OldPulteney__
 1. Pittyvaich
 1. PortEllen
 1. Rosebank
@@ -116,8 +116,8 @@ The List
 1. Teaninich
 1. TheBalvenie
 1. TheDalmore
-1. TheGlenlivet
-1. TheMacallan
+1. __TheGlenlivet__
+1. __TheMacallan__
 1. TheSingleton
 1. Tobermory
 1. Tomatin
