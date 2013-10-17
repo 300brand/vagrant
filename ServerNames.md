@@ -5,8 +5,28 @@ The following is the list of server names to be used. Ones in **bold** are
 currently utilized in the system. Do not forget to update this list when adding
 new servers.
 
-The List
---------
+Physical Server Names
+---------------------
+
+Based on blended scotch whiskey brands
+
+1. Ballantines
+1. ChivasRegal
+1. Grants
+1. Bells
+1. __CuttySark__
+1. JAndB
+1. BlackAndWhite
+1. __Dewars__
+1. __JohnnieWalker__
+1. BlackBottle
+1. TheFamousGrouse
+1. TeachersHighlandCream
+
+Virtual Server Names
+--------------------
+
+Based on single malt whiskey brands
 
 1. Aberfeldy
 1. Aberlour
