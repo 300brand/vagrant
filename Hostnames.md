@@ -7,24 +7,23 @@ _virtual server name_._function_._physical server name_.coverage.net
 
 
 
-CuttySark
----------
+Campbeltown
+-----------
 
-1. Bowmore.mongo.CuttySark.coverage.net
-1. Glenfiddich.mongo.CuttySark.coverage.net
-1. OldPulteney.mongocfg.CuttySark.coverage.net
+1. campbeltown.campbeltown.stats.coverage.net
+1. glenscotia.campbeltown.dns.coverage.net
+1. hazelburn.campbeltown.mongocfg.coverage.net
 
-Dewars
+Highland
+--------
+
+1. glenmorangie.highland.mongo.coverage.net
+1. themacallan.highland.mongo.coverage.net
+1. oldpulteney.highland.mongocfg.coverage.net
+
+Island
 ------
 
-1. Ardbeg.stats.Dewars.coverage.net
-1. Dalwhinnie.dns.Dewars.coverage.net
-1. TheGlenlivet.mongocfg.Dewars.coverage.net
-
-
-JohnnieWalker
--------------
-
-1. Glenmorangie.mongo.JohnnieWalker.coverage.net
-1. Laphroaig.mongo.JohnnieWalker.coverage.net
-1. TheMacallan.mongocfg.JohnnieWalker.coverage.net
+1. highlandpark.island.mongo.coverage.net
+1. ledaig.island.mongo.coverage.net
+1. talisker.island.mongocfg.coverage.net

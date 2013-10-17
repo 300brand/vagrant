@@ -13,9 +13,9 @@ new servers.
 
 ### Campbeltown
 
-1. Campbeltown
-1. GlenScotia
-1. Hazelburn
+1. __Campbeltown__
+1. __GlenScotia__
+1. __Hazelburn__
 1. Kilkerran
 1. Longrow
 1. Springbank
@@ -35,18 +35,18 @@ new servers.
 1. Glendronach
 1. Glengoyne
 1. GlenGarioch
-1. Glenmorangie
+1. __Glenmorangie__
 1. GlenOrd
 1. Glenturret
 1. Glenugie
 1. Knockdhu
 1. LochLomond
-1. TheMacallan
+1. __TheMacallan__
 1. McClelland
 1. Millburn
 1. NorthPort
 1. Oban
-1. OldPulteney
+1. __OldPulteney__
 1. RoyalBrackla
 1. RoyalLochnagar
 1. Tullibardine
@@ -54,11 +54,11 @@ new servers.
 ### Island
 
 1. Arran
-1. HighlandPark
+1. __HighlandPark__
 1. IsleOfJura
-1. Ledaig
+1. __Ledaig__
 1. Scapa
-1. Talisker
+1. __Talisker__
 1. Tobermory
 
 ### Islay
