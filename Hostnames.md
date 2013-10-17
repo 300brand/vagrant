@@ -1,11 +1,14 @@
 Hostnames
 =========
 
-Current hostnames in the form 
-_virtual server name_._function_._physical server name_.coverage.net
+Current hostnames in the form _virtual_._physical_._function_.coverage.net
 
+Where _function_ is one of
 
-
+1. dns
+1. stats
+1. mongo
+1. mongocfg (must have exactly 3)
 
 Campbeltown
 -----------
