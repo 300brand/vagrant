@@ -1,7 +1,7 @@
 Hostnames
 =========
 
-Current hostnames in the form _virtual_._physical_._function_.coverage.net
+Current hostnames in the form _virtual_._function_._physical_.coverage.net
 
 Where _function_ is one of
 
@@ -16,21 +16,21 @@ Where _function_ is one of
 Campbeltown
 -----------
 
-1. campbeltown.campbeltown.stats.coverage.net
-1. glenscotia.campbeltown.dns.coverage.net
-1. kilkerran.campbeltown.puppetmaster.coverage.net
-1. hazelburn.campbeltown.mongocfg.coverage.net
+1. campbeltown.stats.campbeltown.coverage.net
+1. glenscotia.dns.campbeltown.coverage.net
+1. hazelburn.mongocfg.campbeltown.coverage.net
+1. kilkerran.puppetmaster.campbeltown.coverage.net
 
 Highland
 --------
 
-1. glenmorangie.highland.mongo.coverage.net
-1. themacallan.highland.mongo.coverage.net
-1. oldpulteney.highland.mongocfg.coverage.net
+1. glenmorangie.mongo.highland.coverage.net
+1. themacallan.mongo.highland.coverage.net
+1. oldpulteney.mongocfg.highland.coverage.net
 
 Island
 ------
 
-1. highlandpark.island.mongo.coverage.net
-1. ledaig.island.mongo.coverage.net
-1. talisker.island.mongocfg.coverage.net
+1. highlandpark.mongo.island.coverage.net
+1. ledaig.mongo.island.coverage.net
+1. talisker.mongocfg.island.coverage.net
