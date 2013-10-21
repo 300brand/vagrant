@@ -1,0 +1,6 @@
+#!/bin/sh
+MODULES="puppetlabs-stdlib puppetlabs-vcsrepo ajjahn/network ajjahn/dns ghoneycutt/dnsclient"
+
+for MODULE in $MODULES; do
+	puppet module install $MODULE --target-dir=.
+done
