@@ -13,7 +13,7 @@ network::interface{ 'eth1':
 }
 
 node 'glenscotia.dns.campbeltown.coverage.net' {
-	include coveragedns
+	include coverage_dns
 }
 
 node 'kilkerran.puppetmaster.campbeltown.coverage.net' {

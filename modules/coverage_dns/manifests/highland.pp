@@ -1,4 +1,4 @@
-class coveragedns::highland {
+class coverage_dns::highland {
 	dns::record::a {
 		'highland':
 			zone => "coverage.net",

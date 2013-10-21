@@ -1,4 +1,4 @@
-class coveragedns::island {
+class coverage_dns::island {
 	dns::record::a {
 		'island':
 			zone => "coverage.net",
