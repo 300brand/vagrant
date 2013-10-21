@@ -17,8 +17,8 @@ new servers.
 1. __GlenScotia__
 1. __Hazelburn__
 1. __Kilkerran__
-1. Longrow
-1. Springbank
+1. __Longrow__
+1. __Springbank__
 
 ### Highland
 

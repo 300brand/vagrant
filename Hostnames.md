@@ -20,6 +20,8 @@ Campbeltown
 1. glenscotia.dns.campbeltown.coverage.net
 1. hazelburn.mongocfg.campbeltown.coverage.net
 1. kilkerran.puppetmaster.campbeltown.coverage.net
+1. longrow.mongo.campbeltown.coverage.net
+1. springbank.mongo.campbeltown.coverage.net
 
 Highland
 --------
