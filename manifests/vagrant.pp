@@ -22,4 +22,8 @@ node 'kilkerran.puppetmaster.campbeltown.coverage.net' {
 	package { 'puppetmaster':
 		ensure => installed,
 	}
+
+	service { 'puppetmaster':
+		ensure => running,
+	}
 }
