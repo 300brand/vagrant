@@ -1,4 +1,4 @@
-class coverage_puppet {
+class coverage::puppet {
 	package { 'puppet':
 		ensure => installed,
 	}
@@ -7,14 +7,14 @@ class coverage_puppet {
 		path    => '/etc/puppet/puppet.conf',
 		ensure  => file,
 		require => Package['puppet'],
-		content => template("coverage_puppet/puppet.conf.erb"),
+		content => template("coverage/puppet.conf.erb"),
 	}
 
 	file { 'puppet_initd':
 		path    => '/etc/default/puppet',
 		ensure  => file,
 		require => Package['puppet'],
-		content => "puppet:///modules/coverage_puppet/puppet_initd",
+		content => "puppet:///modules/coverage/puppet_initd",
 	}
 
 	service { 'puppet':

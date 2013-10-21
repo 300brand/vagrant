@@ -1,4 +1,4 @@
-class coverage_dns::campbeltown {
+class coverage::dns::campbeltown {
 	dns::record::a{
 		'campbeltown':
 			zone => "coverage.net",

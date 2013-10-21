@@ -1,3 +1,3 @@
 node 'glenscotia.dns.campbeltown.coverage.net' {
-	include coverage_dns
+	include coverage::dns
 }

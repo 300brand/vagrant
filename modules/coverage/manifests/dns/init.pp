@@ -1,8 +1,8 @@
-class coverage_dns {
+class coverage::dns {
 	include dns::server
-	include coverage_dns::campbeltown
-	include coverage_dns::highland
-	include coverage_dns::island
+	include coverage::dns::campbeltown
+	include coverage::dns::highland
+	include coverage::dns::island
 
 	dns::zone { 'coverage.net':
 		soa         => "ns1.coverage.net",

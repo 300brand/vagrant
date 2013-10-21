@@ -1,4 +1,4 @@
-include coverage_puppet
+include coverage::puppet
 
 package { 'etckeeper':
 	ensure => installed,
@@ -15,7 +15,7 @@ network::interface{ 'eth1':
 }
 
 node 'glenscotia.dns.campbeltown.coverage.net' {
-	include coverage_dns
+	include coverage::dns
 }
 
 node 'kilkerran.puppetmaster.campbeltown.coverage.net' {
