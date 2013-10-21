@@ -1,3 +1,5 @@
+include coverage_puppet
+
 package { 'etckeeper':
 	ensure => installed,
 }
