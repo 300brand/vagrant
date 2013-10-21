@@ -85,9 +85,7 @@ Vagrant.configure("2") do |config|
           "eth1_network"       => "192.168.20.32",
           "eth1_broadcast"     => "192.168.20.63",
           "nameserver"         => "192.168.20.34",
-          "puppet_master_ip"   => puppet_master[0],
-          # Can only use the bits of the domain before ".coverage.net"
-          "puppet_master_host" => puppet_master[1].rpartition(".coverage.net").first
+          "puppet_master_host" => puppet_master[1],
         }
         puppet.manifest_file   = "vagrant.pp"
         puppet.manifests_path  = "manifests"
