@@ -16,7 +16,7 @@ new servers.
 1. __Campbeltown__
 1. __GlenScotia__
 1. __Hazelburn__
-1. Kilkerran
+1. __Kilkerran__
 1. Longrow
 1. Springbank
 
