@@ -13,6 +13,13 @@ class coverage::dns {
   #  forwarders => [ '8.8.8.8', '8.8.4.4' ],
   #}
 
+  file { '/etc/bind/named.conf.options':
+    ensure => file,
+    group  => bind,
+    owner  => root,
+    source => 'puppet:///modules/coverage/named.conf.options',
+  }
+
   # Forward Zone
   dns::zone { 'coverage.net':
     soa         => 'ns1.coverage.net',
