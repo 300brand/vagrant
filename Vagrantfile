@@ -20,21 +20,44 @@
 physical_hostname = %x[hostname -f].chomp
 puts "Configuring for #{physical_hostname}"
 
-puppet_master = ["192.168.20.33", "kilkerran.puppetmaster.campbeltown.coverage.net"]
 
 configs = {
   "sable.localhost" => {
-    puppet_master[1] => {
-      "customize" => [
-        ["modifyvm", :id, "--memory", 128]
+    'campbeltown.stats.campbeltown.coverage.net' => {
+      'customize' => [
+        ["modifyvm", :id, "--memory", 1024]
       ],
-      "ip" => puppet_master[0]
+      "ip" => "192.168.20.35"
     },
-    "glenscotia.dns.campbeltown.coverage.net" => {
-      "customize" => [
+    'glenscotia.dns.campbeltown.coverage.net' => {
+      'customize' => [
         ["modifyvm", :id, "--memory", 128]
       ],
       "ip" => "192.168.20.34"
+    },
+    'hazelburn.mongocfg.campbeltown.coverage.net' => {
+      'customize' => [
+        ["modifyvm", :id, "--memory", 1024]
+      ],
+      "ip" => "192.168.20.36"
+    },
+    'kilkerran.puppetmaster.campbeltown.coverage.net' => {
+      'customize' => [
+        ["modifyvm", :id, "--memory", 128]
+      ],
+      "ip" => "192.168.20.33"
+    },
+    'longrow.mongo.campbeltown.coverage.net' => {
+      'customize' => [
+        ["modifyvm", :id, "--memory", 1024]
+      ],
+      "ip" => "192.168.20.37"
+    },
+    'springbank.mongo.campbeltown.coverage.net' => {
+      'customize' => [
+        ["modifyvm", :id, "--memory", 1024]
+      ],
+      "ip" => "192.168.20.38"
     }
   },
   "highland.coverage.net"    => {
@@ -85,7 +108,7 @@ Vagrant.configure("2") do |config|
           "eth1_network"       => "192.168.20.32",
           "eth1_broadcast"     => "192.168.20.63",
           "nameserver"         => "192.168.20.34",
-          "puppet_master_host" => puppet_master[1],
+          "puppet_master_host" => "kilkerran.puppetmaster.campbeltown.coverage.net",
         }
         puppet.manifest_file   = "vagrant.pp"
         puppet.manifests_path  = "manifests"
