@@ -9,9 +9,9 @@ class coverage::dns {
   include coverage::dns::island
 
   # Forwarders
-  dns::server::options{ '/etc/bind/named.conf.options':
-    forwarders => [ '8.8.8.8', '8.8.4.4' ]
-  }
+  #dns::server::options{ '/etc/bind/named.conf.options':
+  #  forwarders => [ '8.8.8.8', '8.8.4.4' ],
+  #}
 
   # Forward Zone
   dns::zone { 'coverage.net':
@@ -21,7 +21,7 @@ class coverage::dns {
   }
 
   # Reverse Zone
-  dns::zone { '1.168.192.IN-ADDR.ARPA':
+  dns::zone { '20.168.192.IN-ADDR.ARPA':
     soa         => 'ns1.coverage.net',
     soa_email   => 'admin.coverage.net',
     nameservers => ['ns1']
