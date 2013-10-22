@@ -4,19 +4,15 @@
 #
 class coverage::mongocfg {
   class { 'mongodb':
-    enable_10gen => true,
+    use_10gen => true,
+    template  => 'coverage/mongocfg.conf.erb',
   }
 
   file { '/var/lib/mongocfg':
     ensure => directory,
     group  => mongodb,
-    owner  => mongodb,
     mode   => '0755',
-  }
-  ->
-  file { '/etc/mongodb.conf':
-    ensure  => file,
-    content => template('coverage/mongocfg.conf.erb'),
-    notify  => Service['mongodb'],
+    notify => Service['mongodb'],
+    owner  => mongodb,
   }
 }
