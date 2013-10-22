@@ -1,3 +1,1 @@
-node 'glenscotia.dns.campbeltown.coverage.net' {
-  include coverage::dns
-}
+import 'nodes/*.pp'

@@ -1,4 +1,7 @@
+# Vagrant bootstrap configuration. Once run, puppet agent takes over to manage
+# further configuration and setup
 include coverage::puppet
+import 'nodes/*.pp'
 
 package { 'etckeeper':
   ensure => installed,
@@ -18,29 +21,3 @@ class { 'dnsclient':
   nameservers => ['192.168.20.34'],
 }
 
-node 'glenscotia.dns.campbeltown.coverage.net' {
-  include coverage::dns
-}
-
-node 'kilkerran.puppetmaster.campbeltown.coverage.net' {
-  package { 'puppetmaster':
-    ensure => installed,
-  }
-  ->
-  file {
-    'puppetmaster_manifests':
-      ensure => link,
-      force  => true,
-      path   => '/etc/puppet/manifests',
-      target => '/vagrant/manifests';
-    'puppetmaster_modules':
-      ensure => link,
-      force  => true,
-      path   => '/etc/puppet/modules',
-      target => '/vagrant/modules';
-  }
-  ->
-  service { 'puppetmaster':
-    ensure => running,
-  }
-}
