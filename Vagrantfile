@@ -90,7 +90,7 @@ Vagrant.configure("2") do |config|
         puppet.manifest_file   = "vagrant.pp"
         puppet.manifests_path  = "manifests"
         puppet.module_path     = "modules"
-        puppet.options         = "--verbose --debug"
+        puppet.options         = "--verbose"
       end
     end
   end
