@@ -27,44 +27,78 @@ configs = {
       'customize' => [
         ["modifyvm", :id, "--memory", 1024]
       ],
-      "ip" => "192.168.20.35"
+      'ip' => "192.168.20.35"
     },
     'glenscotia.dns.campbeltown.coverage.net' => {
       'customize' => [
         ["modifyvm", :id, "--memory", 128]
       ],
-      "ip" => "192.168.20.34"
+      'ip' => "192.168.20.34"
     },
     'hazelburn.mongocfg.campbeltown.coverage.net' => {
       'customize' => [
-        ["modifyvm", :id, "--memory", 1024]
+        ["modifyvm", :id, "--memory", 256]
       ],
-      "ip" => "192.168.20.36"
+      'ip' => "192.168.20.36"
     },
     'kilkerran.puppetmaster.campbeltown.coverage.net' => {
       'customize' => [
         ["modifyvm", :id, "--memory", 128]
       ],
-      "ip" => "192.168.20.33"
+      'ip' => "192.168.20.33"
     },
     'longrow.mongo.campbeltown.coverage.net' => {
       'customize' => [
-        ["modifyvm", :id, "--memory", 1024]
+        ["modifyvm", :id, "--memory", 2048]
       ],
-      "ip" => "192.168.20.37"
+      'ip' => "192.168.20.37"
     },
     'springbank.mongo.campbeltown.coverage.net' => {
       'customize' => [
-        ["modifyvm", :id, "--memory", 1024]
+        ["modifyvm", :id, "--memory", 2048]
       ],
-      "ip" => "192.168.20.38"
+      'ip' => "192.168.20.38"
     }
   },
   "highland.coverage.net"    => {
-
+    'glenmorangie.mongo.highland.coverage.net' => {
+      'customize' => [
+        ["modifyvm", :id, "--memory", 2048]
+      ],
+      'ip' => "192.168.20.40"
+    },
+    'themacallan.mongo.highland.coverage.net' => {
+      'customize' => [
+        ["modifyvm", :id, "--memory", 2048]
+      ],
+      'ip' => "192.168.20.41"
+    },
+    'oldpulteney.mongocfg.highland.coverage.net' => {
+      'customize' => [
+        ["modifyvm", :id, "--memory", 256]
+      ],
+      'ip' => "192.168.20.39"
+    }
   },
   "island.coverage.net"      => {
-
+    'highlandpark.mongo.island.coverage.net' => {
+      'customize' => [
+        ["modifyvm", :id, "--memory", 2048]
+      ],
+      'ip' => "192.168.20.44"
+    },
+    'ledaig.mongo.island.coverage.net' => {
+      'customize' => [
+        ["modifyvm", :id, "--memory", 2048]
+      ],
+      'ip' => "192.168.20.43"
+    },
+    'talisker.mongocfg.island.coverage.net' => {
+      'customize' => [
+        ["modifyvm", :id, "--memory", 256]
+      ],
+      'ip' => "192.168.20.42"
+    }
   }
 }
 
