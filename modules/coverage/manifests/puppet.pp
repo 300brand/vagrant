@@ -13,16 +13,22 @@ class coverage::puppet {
 
   file { 'puppet.conf':
     ensure  => file,
+    content => template('coverage/puppet.conf.erb'),
+    group   => root,
+    notify  => Service['puppet'],
+    owner   => root,
     path    => '/etc/puppet/puppet.conf',
     require => Package['puppet'],
-    content => template('coverage/puppet.conf.erb'),
   }
 
   file { 'puppet_initd':
     ensure  => file,
+    group   => root,
+    notify  => Service['puppet'],
+    owner   => root,
     path    => '/etc/default/puppet',
     require => Package['puppet'],
-    content => 'puppet:///modules/coverage/puppet_initd',
+    source  => 'puppet:///modules/coverage/puppet_initd',
   }
 
   service { 'puppet':
