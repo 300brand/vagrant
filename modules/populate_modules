@@ -1,5 +1,5 @@
 #!/bin/sh
-MODULES="puppetlabs-stdlib puppetlabs-vcsrepo ajjahn-network ajjahn-dns ghoneycutt-dnsclient example42-apt example42-mongodb"
+MODULES="puppetlabs-stdlib puppetlabs-vcsrepo ajjahn-network ajjahn-dns example42-apt example42-mongodb example42-resolver AlexCline-mounts"
 
 for MODULE in $MODULES; do
 	puppet module install $MODULE --target-dir=. --modulepath=.
