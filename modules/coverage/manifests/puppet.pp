@@ -8,7 +8,7 @@
 #
 class coverage::puppet {
   package { 'puppet':
-    ensure => installed,
+    ensure => latest,
   }
 
   file { 'puppet.conf':
