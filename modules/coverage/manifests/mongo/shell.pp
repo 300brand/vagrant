@@ -2,7 +2,7 @@
 #
 # Creates a mongos instance off to the side of the normal mongod
 #
-class coverage::mongos {
+class coverage::mongo::shell {
   file {
     '/var/lib/mongos':
       ensure => directory,
@@ -28,8 +28,3 @@ class coverage::mongos {
     ensure => running,
   }
 }
-# mongos --configdb config0.coverage.net:27019,
-#                   config1.coverage.net:27019,
-#                   config2.coverage.net:27019
-#        --port 27018
-#        --bind_ip 192.168.20.20
