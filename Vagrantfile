@@ -29,7 +29,7 @@ puts "Configuring for #{physical_hostname}"
 mongod_disk_size = 1024 * 1024
 
 configs = {
-  "sable.localhost" => {
+  "campbeltown.coverage.net" => {
     'campbeltown.stats.campbeltown.coverage.net' => {
       'customize' => [
         ["modifyvm", :id, "--memory", 1024],
