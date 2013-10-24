@@ -4,9 +4,7 @@
 #
 class coverage::dns {
   include dns::server
-  include coverage::dns::campbeltown
-  include coverage::dns::highland
-  include coverage::dns::island
+  include coverage::dns::all
 
   # Forwarders
   #dns::server::options{ '/etc/bind/named.conf.options':

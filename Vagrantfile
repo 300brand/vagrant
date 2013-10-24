@@ -17,90 +17,152 @@
 # Broadcast: 192.168.20.63
 # Hosts/Net: 30
 
+require 'ipaddr'
+require 'stringio'
+
+ph_net = IPAddr.new("192.168.20.16/28")
+vm_net = IPAddr.new("192.168.20.32/27")
+
 physical_hostname = %x[hostname -f].chomp
 puts "Configuring for #{physical_hostname}"
 
+mongod_disk_size = 1024 * 1024
 
 configs = {
   "sable.localhost" => {
     'campbeltown.stats.campbeltown.coverage.net' => {
       'customize' => [
-        ["modifyvm", :id, "--memory", 1024]
+        ["modifyvm", :id, "--memory", 1024],
+        ["modifyvm", :id, "--cpus", 2],
+        ["createhd", "--filename", "disks/campbeltown.stats.campbeltown.vdi", "--size", mongod_disk_size],
+        ["storageattach", :id, "--storagectl", "SATA Controller", "--port", 1, "--device", 0, "--type", "hdd", "--medium", "disks/campbeltown.stats.campbeltown.vdi"]
       ],
-      'ip' => "192.168.20.35"
+      'ip' => (vm_net = vm_net.succ()).to_s()
     },
     'glenscotia.dns.campbeltown.coverage.net' => {
       'customize' => [
         ["modifyvm", :id, "--memory", 128]
       ],
-      'ip' => "192.168.20.34"
+      'ip' => (vm_net = vm_net.succ()).to_s()
     },
     'hazelburn.mongocfg.campbeltown.coverage.net' => {
       'customize' => [
         ["modifyvm", :id, "--memory", 256]
       ],
-      'ip' => "192.168.20.36"
+      'ip' => (vm_net = vm_net.succ()).to_s()
     },
     'kilkerran.puppetmaster.campbeltown.coverage.net' => {
       'customize' => [
         ["modifyvm", :id, "--memory", 128]
       ],
-      'ip' => "192.168.20.33"
+      'ip' => (nameserver = vm_net = vm_net.succ()).to_s()
     },
     'longrow.mongo.campbeltown.coverage.net' => {
       'customize' => [
-        ["modifyvm", :id, "--memory", 2048]
+        ["modifyvm", :id, "--memory", 1024],
+        ["modifyvm", :id, "--cpus", 2],
+        ["createhd", "--filename", "disks/longrow.mongo.campbeltown.vdi", "--size", mongod_disk_size],
+        ["storageattach", :id, "--storagectl", "SATA Controller", "--port", 1, "--device", 0, "--type", "hdd", "--medium", "disks/longrow.mongo.campbeltown.vdi"]
       ],
-      'ip' => "192.168.20.37"
+      'ip' => (vm_net = vm_net.succ()).to_s()
     },
     'springbank.mongo.campbeltown.coverage.net' => {
       'customize' => [
-        ["modifyvm", :id, "--memory", 2048]
+        ["modifyvm", :id, "--memory", 1024],
+        ["modifyvm", :id, "--cpus", 2],
+        ["createhd", "--filename", "disks/springbank.mongo.campbeltown.vdi", "--size", mongod_disk_size],
+        ["storageattach", :id, "--storagectl", "SATA Controller", "--port", 1, "--device", 0, "--type", "hdd", "--medium", "disks/springbank.mongo.campbeltown.vdi"]
       ],
-      'ip' => "192.168.20.38"
+      'ip' => (vm_net = vm_net.succ()).to_s()
     }
   },
-  "highland.coverage.net"    => {
+  "highland.coverage.net" => {
     'glenmorangie.mongo.highland.coverage.net' => {
       'customize' => [
-        ["modifyvm", :id, "--memory", 2048]
+        ["modifyvm", :id, "--memory", 7 * 1024],
+        ["modifyvm", :id, "--cpus", 4],
+        ["createhd", "--filename", "disks/glenmorangie.mongo.highland.vdi", "--size", mongod_disk_size],
+        ["storageattach", :id, "--storagectl", "SATA Controller", "--port", 1, "--device", 0, "--type", "hdd", "--medium", "disks/glenmorangie.mongo.highland.vdi"]
       ],
-      'ip' => "192.168.20.40"
+      'ip' => (vm_net = vm_net.succ()).to_s()
     },
     'themacallan.mongo.highland.coverage.net' => {
       'customize' => [
-        ["modifyvm", :id, "--memory", 2048]
+        ["modifyvm", :id, "--memory", 7 * 1024],
+        ["modifyvm", :id, "--cpus", 4],
+        ["createhd", "--filename", "disks/themacallan.mongo.highland.vdi", "--size", mongod_disk_size],
+        ["storageattach", :id, "--storagectl", "SATA Controller", "--port", 1, "--device", 0, "--type", "hdd", "--medium", "disks/themacallan.mongo.highland.vdi"]
       ],
-      'ip' => "192.168.20.41"
+      'ip' => (vm_net = vm_net.succ()).to_s()
     },
     'oldpulteney.mongocfg.highland.coverage.net' => {
       'customize' => [
         ["modifyvm", :id, "--memory", 256]
       ],
-      'ip' => "192.168.20.39"
+      'ip' => (vm_net = vm_net.succ()).to_s()
     }
   },
-  "island.coverage.net"      => {
+  "island.coverage.net" => {
     'highlandpark.mongo.island.coverage.net' => {
       'customize' => [
-        ["modifyvm", :id, "--memory", 2048]
+        ["modifyvm", :id, "--memory", 7 * 1024],
+        ["modifyvm", :id, "--cpus", 4],
+        ["createhd", "--filename", "disks/highlandpark.mongo.island.vdi", "--size", mongod_disk_size],
+        ["storageattach", :id, "--storagectl", "SATA Controller", "--port", 1, "--device", 0, "--type", "hdd", "--medium", "disks/highlandpark.mongo.island.vdi"]
       ],
-      'ip' => "192.168.20.44"
+      'ip' => (vm_net = vm_net.succ()).to_s()
     },
     'ledaig.mongo.island.coverage.net' => {
       'customize' => [
-        ["modifyvm", :id, "--memory", 2048]
+        ["modifyvm", :id, "--memory", 7 * 1024],
+        ["modifyvm", :id, "--cpus", 4],
+        ["createhd", "--filename", "disks/ledaig.mongo.island.vdi", "--size", mongod_disk_size],
+        ["storageattach", :id, "--storagectl", "SATA Controller", "--port", 1, "--device", 0, "--type", "hdd", "--medium", "disks/ledaig.mongo.island.vdi"]
       ],
-      'ip' => "192.168.20.43"
+      'ip' => (vm_net = vm_net.succ()).to_s()
     },
     'talisker.mongocfg.island.coverage.net' => {
       'customize' => [
         ["modifyvm", :id, "--memory", 256]
       ],
-      'ip' => "192.168.20.42"
+      'ip' => (vm_net = vm_net.succ()).to_s()
     }
   }
 }
+
+# Generate DNS configuration file
+dns_f = File.open("modules/coverage/manifests/dns/all.pp", "w")
+dns_f.puts <<-HEADER
+# == Class: coverage::dns::all
+#
+# DNS definitions for all physical and virtual machines
+#
+# Generated by Vagrantfile
+#
+class coverage::dns::all {
+  dns::record::a{
+HEADER
+
+recordf = <<-RECORD
+    '%s':
+      zone => 'coverage.net',
+      data => ['%s'],
+      ptr  => true;
+RECORD
+
+configs.each do |ph_name, vm_configs|
+  dns_f.printf(recordf, ph_name.partition(".coverage.net").first, (ph_net = ph_net.succ()).to_s())
+  vm_configs.each do |vm_name, vm_config|
+    dns_f.printf(recordf, vm_name.partition(".coverage.net").first, vm_config['ip'])
+  end
+end
+
+dns_f.puts <<-FOOTER
+  }
+}
+FOOTER
+dns_f.close
+
 
 vm_config = configs[physical_hostname]
 
@@ -131,20 +193,28 @@ Vagrant.configure("2") do |config|
 
       # Add Virtualbox customizations
       m.vm.provider :virtualbox do |vb|
+        vb.gui = false
         cfg["customize"].each do |custom|
           vb.customize custom
         end
       end
 
+      # Setup eth1 interface
       m.vm.provision :puppet do |puppet|
         puppet.facter = {
           "eth1_ip"            => cfg["ip"],
           "eth1_network"       => "192.168.20.32",
           "eth1_broadcast"     => "192.168.20.63",
-          "nameserver"         => "192.168.20.34",
-          "puppet_master_host" => "kilkerran.puppetmaster.campbeltown.coverage.net",
+          "nameserver"         => nameserver,
         }
-        puppet.manifest_file   = "vagrant.pp"
+        puppet.manifest_file   = "eth1.pp"
+        puppet.manifests_path  = "manifests"
+        puppet.module_path     = "modules"
+        puppet.options         = "--verbose"
+      end
+
+      m.vm.provision :puppet do |puppet|
+        puppet.manifest_file   = "site.pp"
         puppet.manifests_path  = "manifests"
         puppet.module_path     = "modules"
         puppet.options         = "--verbose"
