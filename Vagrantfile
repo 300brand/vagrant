@@ -163,8 +163,12 @@ dns_f.puts <<-FOOTER
 FOOTER
 dns_f.close
 
-
+# Establish configuration for this host
 vm_config = configs[physical_hostname]
+if vm_config == nil
+  printf "No configuration found for %s. Exiting\n", physical_hostname
+  exit
+end
 
 Vagrant.configure("2") do |config|
 
