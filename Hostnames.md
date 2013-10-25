@@ -18,11 +18,11 @@ Campbeltown
 
 ### Configuration
 
-**CPU** Intel Xeon X3353 2.66GHz 12M LGA771 80W AT80584KJ067N (4 physical cores, 0 virtual cores)
-**RAM** 4G
-**Mount /** 32G
-**Mount /home** 467G
-**Swap** 2G
+**CPU** Intel Xeon X3353 2.66GHz 12M LGA771 80W AT80584KJ067N (4 physical cores, 0 virtual cores)  
+**RAM** 4G  
+**Mount /** 32G  
+**Mount /home** 467G  
+**Swap** 2G  
 
 
 ### Virtual Machines
@@ -37,11 +37,11 @@ Highland
 
 ### Configuration
 
-**CPU** Intel Xeon E3-1230 3.2GHz 8MB LGA1155 80W BX80623E31230 (4 physical; 4 virtual cores)
-**RAM** 8G
-**Mount: /** 32G
-**Mount: /home** 2TB
-**Swap** 4x1.2G
+**CPU** Intel Xeon E3-1230 3.2GHz 8MB LGA1155 80W BX80623E31230 (4 physical; 4 virtual cores)  
+**RAM** 8G  
+**Mount: /** 32G  
+**Mount: /home** 2TB  
+**Swap** 4x1.2G  
 
 
 ### Virtual Machines
@@ -57,11 +57,11 @@ Island
 
 ### Configuration
 
-**CPU** Intel Xeon E3-1230 3.2GHz 8MB LGA1155 80W BX80623E31230 (4 physical; 4 virtual cores)
-**RAM** 8G
-**Mount: /** 32G
-**Mount: /home** 2TB
-**Swap** 4x1.2G
+**CPU** Intel Xeon E3-1230 3.2GHz 8MB LGA1155 80W BX80623E31230 (4 physical; 4 virtual cores)  
+**RAM** 8G  
+**Mount: /** 32G  
+**Mount: /home** 2TB  
+**Swap** 4x1.2G  
 
 
 ### Virtual Machines
