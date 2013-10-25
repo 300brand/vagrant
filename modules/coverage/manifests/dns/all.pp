@@ -26,27 +26,27 @@ class coverage::dns::all {
       zone => 'coverage.net',
       data => ['192.168.20.36'],
       ptr  => true;
-    'longrow.mongo.campbeltown':
-      zone => 'coverage.net',
-      data => ['192.168.20.37'],
-      ptr  => true;
-    'springbank.mongo.campbeltown':
-      zone => 'coverage.net',
-      data => ['192.168.20.38'],
-      ptr  => true;
     'highland':
       zone => 'coverage.net',
       data => ['192.168.20.18'],
       ptr  => true;
+    'dalwhinnie.mongo.highland':
+      zone => 'coverage.net',
+      data => ['192.168.20.37'],
+      ptr  => true;
     'glenmorangie.mongo.highland':
+      zone => 'coverage.net',
+      data => ['192.168.20.38'],
+      ptr  => true;
+    'oldpulteney.mongocfg.highland':
       zone => 'coverage.net',
       data => ['192.168.20.39'],
       ptr  => true;
-    'themacallan.mongo.highland':
+    'thedalmore.mongo.highland':
       zone => 'coverage.net',
       data => ['192.168.20.40'],
       ptr  => true;
-    'oldpulteney.mongocfg.highland':
+    'themacallan.mongo.highland':
       zone => 'coverage.net',
       data => ['192.168.20.41'],
       ptr  => true;
@@ -58,13 +58,21 @@ class coverage::dns::all {
       zone => 'coverage.net',
       data => ['192.168.20.42'],
       ptr  => true;
-    'ledaig.mongo.island':
+    'isleofjura.mongo.island':
       zone => 'coverage.net',
       data => ['192.168.20.43'],
       ptr  => true;
-    'talisker.mongocfg.island':
+    'ledaig.mongo.island':
       zone => 'coverage.net',
       data => ['192.168.20.44'],
+      ptr  => true;
+    'talisker.mongocfg.island':
+      zone => 'coverage.net',
+      data => ['192.168.20.45'],
+      ptr  => true;
+    'tobermory.mongo.island':
+      zone => 'coverage.net',
+      data => ['192.168.20.46'],
       ptr  => true;
   }
 }

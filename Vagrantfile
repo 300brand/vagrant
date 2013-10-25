@@ -210,7 +210,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell, :inline => "[ -x /usr/bin/puppet ] || (apt-get update && apt-get install -y puppet)"
 
   vm_config.each do |vm_hostname, cfg|
-    config.vm.define vm_hostname.partition(".").first do |m|
+    config.vm.define vm_hostname.split(".")[0,2].join(".") do |m|
       m.vm.hostname = vm_hostname
 
       # Add Virtualbox customizations
