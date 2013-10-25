@@ -9,6 +9,7 @@ package { 'ntpdate':
 }
 
 class { 'resolver':
+  dns_domain  => 'coverage.net',
   dns_servers => ['192.168.20.34'],
 }
 
