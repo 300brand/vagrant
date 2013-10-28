@@ -3,8 +3,11 @@
 # DNS definitions for the coverage.net domain
 #
 class coverage::dns {
-  include dns::server
   include coverage::dns::all
+
+  class { 'dns::server':
+    notify => File['resolv.conf'],
+  }
 
   # Forwarders
   #dns::server::options{ '/etc/bind/named.conf.options':
