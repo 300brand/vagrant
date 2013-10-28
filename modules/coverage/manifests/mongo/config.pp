@@ -7,7 +7,7 @@ class coverage::mongo::config {
 
   class { 'mongodb':
     use_10gen => true,
-    require   => Fstab['mongo_storage']
+    require   => Fstab['mongo_storage'],
     template  => 'coverage/mongocfg.conf.erb',
   }
 }
