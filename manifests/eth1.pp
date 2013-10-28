@@ -18,3 +18,7 @@ node 'glenscotia.dns.campbeltown.coverage.net' {
     ensure => installed,
   }
 }
+
+node 'default' {
+  # Catch-all - do nothing.
+}
