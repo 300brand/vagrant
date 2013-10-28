@@ -16,9 +16,10 @@ class coverage::mongo::mount {
   }
 
   file { $dir:
-    ensure => directory,
-    group  => mongodb,
-    owner  => mongodb,
+    ensure  => directory,
+    group   => mongodb,
+    owner   => mongodb,
+    require => Class['mongodb'],
   }
 
   fstab { 'mongo_storage':
