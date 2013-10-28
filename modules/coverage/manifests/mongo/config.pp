@@ -3,20 +3,11 @@
 # Configures a mongod instance running in configsvr mode
 #
 class coverage::mongo::config {
-  include coverage::workingdir
-
-  file { 'mongocfg_dir':
-    ensure  => directory,
-    group   => mongodb,
-    mode    => '0755',
-    owner   => mongodb,
-    path    => "/vagrant/${::fqdn}/mongocfg",
-    require => File['workingdir'],
-  }
+  include coverage::mongo::mount
 
   class { 'mongodb':
-    require   => File['mongocfg_dir']
-    template  => 'coverage/mongocfg.conf.erb',
     use_10gen => true,
+    require   => Fstab['mongo_storage']
+    template  => 'coverage/mongocfg.conf.erb',
   }
 }
