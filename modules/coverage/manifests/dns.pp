@@ -6,7 +6,7 @@ class coverage::dns {
   include coverage::dns::all
 
   class { 'dns::server':
-    notify => File['resolv.conf'],
+    before => File['resolv.conf'],
   }
 
   # Forwarders
