@@ -5,6 +5,5 @@ node /^\w+\.mongocfg\.\w+\.coverage\.net/ {
   class { 'gearman':
     listen                => $ipaddress_eth1,
     disable_limits_module => true,
-    require               => Apt::Repository['testing'],
   }
 }
