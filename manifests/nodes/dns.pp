@@ -1,3 +1,5 @@
 node 'glenscotia.dns.campbeltown.coverage.net' {
-  include coverage::dns
+  class { 'coverage::dns':
+    before => Stage['main']
+  }
 }

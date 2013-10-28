@@ -38,5 +38,3 @@ class coverage::dns {
       data => ['127.0.0.1'];
   }
 }
-->
-Stage['main']
