@@ -191,6 +191,7 @@ end
 Vagrant.configure("2") do |config|
 
   config.vm.box = "WheezyBase"
+  config.vm.box_url = "http://coverage.300brand.co/WheezyBase.box"
   config.ssh.default.private_key_path = "vagrant_rsa"
 
   # Create eth1 adapter
