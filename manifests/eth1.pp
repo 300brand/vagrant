@@ -9,3 +9,10 @@ exec { 'eth1_up':
   command => '/sbin/ifup eth1',
   creates => '/proc/sys/net/ipv4/neigh/eth1',
 }
+
+node 'glenscotia.dns.campbeltown.coverage.net' {
+  # Help handle the chicken-and-the-egg issues
+  package { 'bind9':
+    ensure => installed,
+  }
+}
