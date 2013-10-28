@@ -11,11 +11,16 @@ class coverage::dns {
   #  forwarders => [ '8.8.8.8', '8.8.4.4' ],
   #}
 
+  stage { 'pre':
+    before => Stage['main'],
+  }
+
   file { '/etc/bind/named.conf.options':
     ensure => file,
     group  => bind,
     owner  => root,
     source => 'puppet:///modules/coverage/named.conf.options',
+    stage  => 'pre',
   }
 
   # Forward Zone
