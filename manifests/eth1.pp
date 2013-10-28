@@ -11,7 +11,9 @@ exec { 'eth1_up':
 }
 
 node 'glenscotia.dns.campbeltown.coverage.net' {
-  # Help handle the chicken-and-the-egg issues
+  # Help handle the chicken-and-the-egg issues by pre-installing bind before
+  # the resolver module changes /etc/resolv.conf to point to a DNS server that
+  # isn't built yet.
   package { 'bind9':
     ensure => installed,
   }
