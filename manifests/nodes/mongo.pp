@@ -8,7 +8,7 @@
 # | ISLAND       |     |    |    |    |
 # | ledaig       | ----+    |    |    |
 # | highlandpark | ---------+    |    |
-# | islefojura   | --------------+    |
+# | isleofjura   | --------------+    |
 # | tobermory    | -------------------+
 # +--------------+
 
@@ -22,7 +22,7 @@ node 'thedalmore.mongo.highland.coverage.net', 'highlandpark.mongo.island.covera
     replSet => 'rs1',
   }
 }
-node 'dalwhinnie.mongo.highland.coverage.net', 'islefojura.mongo.island.coverage.net' {
+node 'dalwhinnie.mongo.highland.coverage.net', 'isleofjura.mongo.island.coverage.net' {
   class { 'coverage::mongo::data':
     replSet => 'rs2',
   }
