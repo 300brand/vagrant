@@ -74,7 +74,7 @@ class coverage::service (
 
   $service_pkg = 'github.com/300brand/coverageservices'
   exec { 'recompile':
-    command     => "GOPATH=${gopath} /usr/bin/go install ${service_pkg}"
+    command     => "GOPATH=${gopath} /usr/bin/go install ${service_pkg}",
     notify      => Service['coverageservices'],
     refreshonly => true,
     require     => Vcsrepo <||> ,
