@@ -20,7 +20,7 @@ class coverage::mongo::mount {
     ensure  => directory,
     group   => mongodb,
     owner   => mongodb,
-    require => Class['mongodb'],
+    require => Package['mongodb'],
   }
 
   fstab { 'mongo_storage':
