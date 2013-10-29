@@ -1,6 +1,7 @@
 network::interface{ 'eth1':
   address   => $eth1_ip,
   broadcast => $eth1_broadcast,
+  gateway   => $eth1_gateway,
   network   => $eth1_network,
   notify    => Exec['eth1_up'],
 }

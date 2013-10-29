@@ -262,8 +262,9 @@ Vagrant.configure("2") do |config|
       m.vm.provision :puppet do |puppet|
         puppet.facter = {
           "eth1_ip"            => cfg["ip"],
-          "eth1_network"       => "192.168.20.32",
           "eth1_broadcast"     => "192.168.20.63",
+          "eth1_gateway"       => "192.168.20.1",
+          "eth1_network"       => "192.168.20.32",
           "nameserver"         => nameserver,
         }
         puppet.manifest_file   = "eth1.pp"
