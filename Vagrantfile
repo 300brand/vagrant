@@ -26,7 +26,7 @@ vm_net = IPAddr.new("192.168.20.32/27")
 physical_hostname = %x[hostname -f].chomp
 puts "Configuring for #{physical_hostname}"
 
-mongod_disk_size = 1024 * 1024
+mongod_disk_size = 400 * 1024
 
 configs = {
   "campbeltown.coverage.net" => {
