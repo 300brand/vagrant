@@ -13,8 +13,8 @@ cat > $T <<"EOF"
 }
 EOF
 
-awk -f $T /etc/init.d/mongodb > /etc/init.d/mongos || exit 1
+/usr/bin/awk -f $T /etc/init.d/mongodb > /etc/init.d/mongos || exit 1
 
-chmod +x /etc/init.d/mongos
+/bin/chmod +x /etc/init.d/mongos
 
-update-rc.d mongos defaults || exit 1
+/usr/sbin/update-rc.d mongos defaults || exit 1

@@ -26,6 +26,7 @@ class coverage::mongo::shell {
   }
 
   service { 'mongos':
-    ensure => running,
+    ensure  => running,
+    require => Exec['copy_mongod_init']
   }
 }
