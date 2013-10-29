@@ -84,7 +84,7 @@ class coverage::service (
   $service_pkg = 'github.com/300brand/coverageservices'
   exec { 'recompile':
     command     => "/usr/bin/go install ${service_pkg}",
-    environment => ["GOPATH=${gopath}"]
+    environment => ["GOPATH=${gopath}"],
     notify      => Service['coverageservices'],
     path        => ['/usr/bin'],
     refreshonly => true,
