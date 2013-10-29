@@ -236,7 +236,7 @@ Vagrant.configure("2") do |config|
       "modifyvm", :id,
       "--nic2", "bridged",
       "--bridgeadapter2", "eth0",
-      "--nictype2", "virtio"
+      "--nictype2", "82543GC"
     ]
   end
 

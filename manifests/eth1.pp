@@ -5,6 +5,13 @@ network::interface{ 'eth1':
   notify    => Exec['eth1_up'],
 }
 
+# Damn DHCP'd eth0 taking over /etc/resolv.conf...
+network::interface{ 'eth0':
+  address   => '10.0.2.15',
+  broadcast => '10.0.2.255',
+  network   => '10.0.2.0',
+}
+
 exec { 'eth1_up':
   command => '/sbin/ifup eth1',
   creates => '/proc/sys/net/ipv4/neigh/eth1',
