@@ -89,15 +89,21 @@ class coverage::service (
     ensure => installed,
   }
 
+  package { 'pkg-config':
+    ensure => installed,
+  }
+
   $service_pkg = 'github.com/300brand/coverageservices'
   exec { 'recompile':
     command     => "/usr/bin/go get ${service_pkg}",
-    creates     => "${gopath}/bin/coverageservices",
     environment => ["GOPATH=${gopath}"],
     notify      => Service['coverageservices'],
     path        => ['/usr/bin'],
     refreshonly => true,
-    requires    => Package['libxml2-dev'],
+    require     => [
+      Package['libxml2-dev'],
+      Package['pkg-config'],
+    ],
   }
 
 
