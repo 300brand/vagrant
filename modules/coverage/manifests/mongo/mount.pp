@@ -11,6 +11,7 @@ class coverage::mongo::mount {
       creates => '/dev/disk/by-label/MONGO';
     'mount_mongo_storage':
       command => "/bin/mount /dev/sdb $dir",
+      require => Exec['format_mongo_storage'],
       notify  => File[$dir],
       unless  => "/bin/mountpoint -q $dir";
   }
