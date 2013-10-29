@@ -98,6 +98,9 @@ class coverage::service (
 
   service { 'coverageservices':
     ensure  => running,
-    require => File['/etc/init.d/coverageservices'],
+    require => [
+      File['/etc/init.d/coverageservices'],
+      Exec['recompile'],
+    ],
   }
 }
