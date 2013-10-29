@@ -30,6 +30,7 @@ class coverage::service (
     path     =>"${gopath}/src/github.com/300brand/coverage",
     provider => git,
     source   => 'git://github.com/300brand/coverage.git',
+    tag      => 'gocode',
   }
 
   vcsrepo { 'coverageservices':
@@ -38,6 +39,7 @@ class coverage::service (
     path     =>"${gopath}/src/github.com/300brand/coverageservices",
     provider => git,
     source   => 'git://github.com/300brand/coverageservices.git',
+    tag      => 'gocode',
   }
 
   vcsrepo { 'disgo':
@@ -46,6 +48,7 @@ class coverage::service (
     path     =>"${gopath}/src/github.com/300brand/disgo",
     provider => git,
     source   => 'git://github.com/300brand/disgo.git',
+    tag      => 'gocode',
   }
 
   vcsrepo { 'logger':
@@ -54,6 +57,7 @@ class coverage::service (
     path     =>"${gopath}/src/github.com/300brand/logger",
     provider => git,
     source   => 'git://github.com/300brand/logger.git',
+    tag      => 'gocode',
   }
 
   vcsrepo { 'go-toml-config':
@@ -62,6 +66,7 @@ class coverage::service (
     path     =>"${gopath}/src/github.com/300brand/go-toml-config",
     provider => git,
     source   => 'git://github.com/300brand/go-toml-config.git',
+    tag      => 'gocode',
   }
 
   vcsrepo { 'statsd':
@@ -70,15 +75,19 @@ class coverage::service (
     path     =>"${gopath}/src/github.com/300brand/statsd",
     provider => git,
     source   => 'git://github.com/300brand/statsd.git',
+    tag      => 'gocode',
   }
+
+  # Establish dependency where all repos must update before recompiling
+  Vcsrepo <| tag == 'gocode' |> -> Exec['recompile']
 
   $service_pkg = 'github.com/300brand/coverageservices'
   exec { 'recompile':
     command     => "GOPATH=${gopath} /usr/bin/go install ${service_pkg}",
     notify      => Service['coverageservices'],
     refreshonly => true,
-    require     => Vcsrepo <||> ,
   }
+
 
   service { 'coverageservices':
     ensure  => running,
