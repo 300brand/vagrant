@@ -22,6 +22,7 @@ class coverage::mongo::shell {
     command => '/bin/bash /vagrant/modules/coverage/files/make_mongos.sh',
     creates => '/etc/init.d/mongos',
     notify  => Service['mongos'],
+    require => Class['mongodb'],
   }
 
   service { 'mongos':
