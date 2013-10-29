@@ -108,7 +108,7 @@ class coverage::service (
 
 
   service { 'coverageservices':
-    ensure  => running,
+    ensure  => stopped,
     require => [
       File['/etc/init.d/coverageservices'],
       Exec['recompile'],
