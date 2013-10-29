@@ -17,8 +17,8 @@ new servers.
 1. __GlenScotia__
 1. __Hazelburn__
 1. __Kilkerran__
-1. Longrow
-1. Springbank
+1. __Longrow__
+1. __Springbank__
 
 ### Highland
 
@@ -53,11 +53,11 @@ new servers.
 
 ### Island
 
-1. Arran
+1. __Arran__
 1. __HighlandPark__
 1. __IsleOfJura__
 1. __Ledaig__
-1. Scapa
+1. __Scapa__
 1. __Talisker__
 1. __Tobermory__
 

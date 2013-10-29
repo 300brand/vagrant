@@ -56,6 +56,18 @@ configs = {
         ["modifyvm", :id, "--memory", 128]
       ],
       'ip' => (nameserver = vm_net = vm_net.succ()).to_s()
+    },
+    'longrow.node.campbeltown.coverage.net' => {
+      'customize' => [
+        ["modifyvm", :id, "--memory", 1024]
+      ],
+      'ip' => (nameserver = vm_net = vm_net.succ()).to_s()
+    },
+    'springbank.node.campbeltown.coverage.net' => {
+      'customize' => [
+        ["modifyvm", :id, "--memory", 1024]
+      ],
+      'ip' => (nameserver = vm_net = vm_net.succ()).to_s()
     }
   },
   "highland.coverage.net" => {
@@ -68,6 +80,12 @@ configs = {
       ],
       'ip' => (vm_net = vm_net.succ()).to_s()
     },
+    'fettercairn.node.highland.coverage.net' => {
+      'customize' => [
+        ["modifyvm", :id, "--memory", 1024]
+      ],
+      'ip' => (nameserver = vm_net = vm_net.succ()).to_s()
+    },
     'glenmorangie.mongo.highland.coverage.net' => {
       'customize' => [
         ["modifyvm", :id, "--memory", 7 * 1024],
@@ -76,6 +94,12 @@ configs = {
         ["storageattach", :id, "--storagectl", "SATA Controller", "--port", 1, "--device", 0, "--type", "hdd", "--medium", "disks/glenmorangie.mongo.highland.vdi"]
       ],
       'ip' => (vm_net = vm_net.succ()).to_s()
+    },
+    'glenturret.node.highland.coverage.net' => {
+      'customize' => [
+        ["modifyvm", :id, "--memory", 1024]
+      ],
+      'ip' => (nameserver = vm_net = vm_net.succ()).to_s()
     },
     'oldpulteney.mongocfg.highland.coverage.net' => {
       'customize' => [
@@ -103,6 +127,12 @@ configs = {
     }
   },
   "island.coverage.net" => {
+    'arran.node.island.coverage.net' => {
+      'customize' => [
+        ["modifyvm", :id, "--memory", 1024]
+      ],
+      'ip' => (nameserver = vm_net = vm_net.succ()).to_s()
+    },
     'highlandpark.mongo.island.coverage.net' => {
       'customize' => [
         ["modifyvm", :id, "--memory", 7 * 1024],
@@ -129,6 +159,12 @@ configs = {
         ["storageattach", :id, "--storagectl", "SATA Controller", "--port", 1, "--device", 0, "--type", "hdd", "--medium", "disks/ledaig.mongo.island.vdi"]
       ],
       'ip' => (vm_net = vm_net.succ()).to_s()
+    },
+    'scapa.node.island.coverage.net' => {
+      'customize' => [
+        ["modifyvm", :id, "--memory", 1024]
+      ],
+      'ip' => (nameserver = vm_net = vm_net.succ()).to_s()
     },
     'talisker.mongocfg.island.coverage.net' => {
       'customize' => [

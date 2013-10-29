@@ -31,6 +31,8 @@ Campbeltown
 1. glenscotia.dns.campbeltown.coverage.net
 1. hazelburn.mongocfg.campbeltown.coverage.net
 1. kilkerran.puppetmaster.campbeltown.coverage.net
+1. longrow.node.campbeltown.coverage.net
+1. springbank.node.campbeltown.coverage.net
 
 Highland
 --------
@@ -51,6 +53,8 @@ Highland
 1. oldpulteney.mongocfg.highland.coverage.net
 1. thedalmore.mongo.highland.coverage.net
 1. themacallan.mongo.highland.coverage.net
+1. fettercairn.node.highland.coverage.net
+1. glenturret.node.highland.coverage.net
 
 Island
 ------
@@ -66,8 +70,10 @@ Island
 
 ### Virtual Machines
 
+1. arran.node.island.coverage.net
 1. highlandpark.mongo.island.coverage.net
 1. isleofjura.mongo.island.coverage.net
 1. ledaig.mongo.island.coverage.net
+1. scapa.node.island.coverage.net
 1. talisker.mongocfg.island.coverage.net
 1. tobermory.mongo.island.coverage.net
