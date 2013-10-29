@@ -24,6 +24,11 @@ class coverage::service (
       mode    => '0755';
   }
 
+  exec { 'install_initd':
+    command   => '/usr/sbin/update-rc.d coverageservices defaults',
+    subscribe => File['/etc/init.d/coverageservices'],
+  }
+
   vcsrepo { 'coverage':
     ensure   => latest,
     notify   => Exec['recompile'],
