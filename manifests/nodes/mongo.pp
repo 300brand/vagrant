@@ -1,15 +1,15 @@
 # +--------------+
 # | HIGHLAND     |
 # | glenmorangie | --[rs0]
-# | thedalmore   | ----+--[rs1]
-# | dalwhinnie   | ----+----+--[rs2]
-# | themacallan  | ----+----+----+--[rs3]
+# | thedalmore   | ----|----+
+# | dalwhinnie   | ----|----|--[rs2]
+# | themacallan  | ----|----|----|----+
 # +--------------+     |    |    |    |
 # | ISLAND       |     |    |    |    |
 # | ledaig       | ----+    |    |    |
-# | highlandpark | ---------+    |    |
+# | highlandpark | -------[rs1]  |    |
 # | isleofjura   | --------------+    |
-# | tobermory    | -------------------+
+# | tobermory    | -----------------[rs3]
 # +--------------+
 
 node 'glenmorangie.mongo.highland.coverage.net', 'ledaig.mongo.island.coverage.net' {
