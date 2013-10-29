@@ -5,7 +5,6 @@
 class coverage::service (
   ){
   $gopath = '/usr/share/go'
-  $gobin = '/usr/local/go/bin'
 
   file {
     $gopath:
@@ -89,6 +88,7 @@ class coverage::service (
   $service_pkg = 'github.com/300brand/coverageservices'
   exec { 'recompile':
     command     => "/usr/bin/go install ${service_pkg}",
+    creates     => "${gopath}/bin/coverageservices",
     environment => ["GOPATH=${gopath}"],
     notify      => Service['coverageservices'],
     path        => ['/usr/bin'],

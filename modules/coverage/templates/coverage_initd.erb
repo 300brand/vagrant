@@ -19,7 +19,7 @@ set -e
 
 NAME=coverageservices
 PIDFILE=/var/run/$NAME.pid
-DAEMON=<%= $gobin %>/coverageservices
+DAEMON=<%= $gopath %>/bin/coverageservices
 DAEMON_OPTS="--config /etc/coverage.toml"
 
 case "$1" in
