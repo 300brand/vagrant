@@ -6,13 +6,13 @@
 # | themacallan  | ----+----+----+--[rs3]
 # +--------------+     |    |    |    |
 # | ISLAND       |     |    |    |    |
-# | lediag       | ----+    |    |    |
+# | ledaig       | ----+    |    |    |
 # | highlandpark | ---------+    |    |
-# | talisker     | --------------+    |
+# | islefojura   | --------------+    |
 # | tobermory    | -------------------+
 # +--------------+
 
-node 'glenmorangie.mongo.highland.coverage.net', 'lediag.mongo.island.coverage.net' {
+node 'glenmorangie.mongo.highland.coverage.net', 'ledaig.mongo.island.coverage.net' {
   class { 'coverage::mongo::data':
     replSet => 'rs0',
   }
@@ -22,7 +22,7 @@ node 'thedalmore.mongo.highland.coverage.net', 'highlandpark.mongo.island.covera
     replSet => 'rs1',
   }
 }
-node 'dalwhinnie.mongo.highland.coverage.net', 'talisker.mongo.island.coverage.net' {
+node 'dalwhinnie.mongo.highland.coverage.net', 'islefojura.mongo.island.coverage.net' {
   class { 'coverage::mongo::data':
     replSet => 'rs2',
   }
