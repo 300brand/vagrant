@@ -23,9 +23,10 @@ class coverage::golang {
       environment => ['DEBIAN_FRONTEND=noninteractive'],
       notify      => Exec['godeb'];
     'godeb':
-      command => '/usr/bin/go get launchpad.net/godeb',
-      creates => '/usr/lib/go/bin/godeb',
-      notify  => [
+      command     => '/usr/bin/go get launchpad.net/godeb',
+      environment => ['GOPATH=/usr/share/go'],
+      creates     => '/usr/lib/go/bin/godeb',
+      notify      => [
         Exec['install_go'],
         Package['golang-go'],
         Package['golang-src'],
