@@ -1,0 +1,47 @@
+#!/bin/sh
+#
+# Author 300brand
+# File managed by puppet
+#
+### BEGIN INIT INFO
+# Provides:          coverageservices
+# Required-Start:    $all
+# Required-Stop:
+# Default-Start:     3 5
+# Default-Stop:      0 1 2 6
+# Short-Description: Coverage tracking processor node
+# Description:       Joins into the coverage tracking network and connects to
+#                    gearman job servers to distribute processing amongst all
+#                    participating nodes.
+### END INIT INFO
+
+set -e
+
+NAME=coverageservices
+PIDFILE=/var/run/$NAME.pid
+DAEMON=<%= $gobin %>/coverageservices
+DAEMON_OPTS="--config /etc/coverage.toml"
+
+case "$1" in
+	start)
+		echo -n "Starting ${NAME}"
+		start-stop-daemon --start --pidfile $PIDFILE --exec $DAEMON -- $DAEMON_OPTS
+		echo "."
+		;;
+	stop)
+		echo -n "Stopping ${NAME}"
+		start-stop-daemon --stop --oknodo --pidfile $PIDFILE
+		echo "."
+		;;
+	restart)
+		echo -n "Restarting ${NAME}"
+		start-stop-daemon --stop --oknodo --retry 30 --pidfile $PIDFILE
+		start-stop-daemon --start --pidfile $PIDFILE --exec $DAEMON -- $DAEMON_OPTS
+		echo "."
+		;;
+	*)
+		echo "Usage: $1 {start|stop|restart}"
+		exit 1
+esac
+
+exit 0
