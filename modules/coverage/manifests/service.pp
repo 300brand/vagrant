@@ -21,13 +21,13 @@ class coverage::service (
     '/etc/init.d/coverageservices':
       ensure  => file,
       content => template('coverage/coverage_initd.erb'),
-      mode    => '0755',
+      mode    => '0755';
   }
 
   vcsrepo { 'coverage':
     ensure   => latest,
     notify   => Exec['recompile'],
-    path     =>"${gopath}/src/github.com/300brand/coverage":
+    path     =>"${gopath}/src/github.com/300brand/coverage",
     provider => git,
     source   => 'git://github.com/300brand/coverage.git',
   }
@@ -35,7 +35,7 @@ class coverage::service (
   vcsrepo { 'coverageservices':
     ensure   => latest,
     notify   => Exec['recompile'],
-    path     =>"${gopath}/src/github.com/300brand/coverageservices":
+    path     =>"${gopath}/src/github.com/300brand/coverageservices",
     provider => git,
     source   => 'git://github.com/300brand/coverageservices.git',
   }
@@ -43,7 +43,7 @@ class coverage::service (
   vcsrepo { 'disgo':
     ensure   => latest,
     notify   => Exec['recompile'],
-    path     =>"${gopath}/src/github.com/300brand/disgo":
+    path     =>"${gopath}/src/github.com/300brand/disgo",
     provider => git,
     source   => 'git://github.com/300brand/disgo.git',
   }
@@ -51,7 +51,7 @@ class coverage::service (
   vcsrepo { 'logger':
     ensure   => latest,
     notify   => Exec['recompile'],
-    path     =>"${gopath}/src/github.com/300brand/logger":
+    path     =>"${gopath}/src/github.com/300brand/logger",
     provider => git,
     source   => 'git://github.com/300brand/logger.git',
   }
@@ -59,7 +59,7 @@ class coverage::service (
   vcsrepo { 'go-toml-config':
     ensure   => latest,
     notify   => Exec['recompile'],
-    path     =>"${gopath}/src/github.com/300brand/go-toml-config":
+    path     =>"${gopath}/src/github.com/300brand/go-toml-config",
     provider => git,
     source   => 'git://github.com/300brand/go-toml-config.git',
   }
@@ -67,7 +67,7 @@ class coverage::service (
   vcsrepo { 'statsd':
     ensure   => latest,
     notify   => Exec['recompile'],
-    path     =>"${gopath}/src/github.com/300brand/statsd":
+    path     =>"${gopath}/src/github.com/300brand/statsd",
     provider => git,
     source   => 'git://github.com/300brand/statsd.git',
   }
