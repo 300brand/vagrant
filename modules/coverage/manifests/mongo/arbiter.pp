@@ -20,7 +20,7 @@ define coverage::mongo::arbiter (
       mode   => '0755',
       notify => Service["$arbiter"],
       owner  => mongodb;
-    "/etc/mongo-${arbiter}.conf":
+    "/etc/${arbiter}.conf":
       ensure  => file,
       content => template('coverage/arbiter.conf.erb'),
       group   => root,
