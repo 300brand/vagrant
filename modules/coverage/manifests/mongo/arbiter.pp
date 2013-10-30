@@ -28,7 +28,7 @@ define coverage::mongo::arbiter (
       owner   => root;
   }
   exec { "copy_arbiter_${replSet}":
-    command => '/bin/bash /vagrant/modules/coverage/files/make_mongos.sh',
+    command => "/bin/bash /vagrant/modules/coverage/files/make_mongos.sh '${arbiter}'",
     creates => "/etc/init.d/${arbiter}",
     notify  => Service["$arbiter"],
     require => Class['mongodb'],
