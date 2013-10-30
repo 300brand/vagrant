@@ -33,6 +33,7 @@ class coverage::service (
     notify   => Exec['recompile'],
     path     =>"${gopath}/src/github.com/300brand/coverage",
     provider => git,
+    revision => 'master',
     source   => 'git://github.com/300brand/coverage.git',
     tag      => 'gocode',
   }
@@ -42,6 +43,7 @@ class coverage::service (
     notify   => Exec['recompile'],
     path     =>"${gopath}/src/github.com/300brand/coverageservices",
     provider => git,
+    revision => 'master',
     source   => 'git://github.com/300brand/coverageservices.git',
     tag      => 'gocode',
   }
@@ -51,6 +53,7 @@ class coverage::service (
     notify   => Exec['recompile'],
     path     =>"${gopath}/src/github.com/300brand/disgo",
     provider => git,
+    revision => 'master',
     source   => 'git://github.com/300brand/disgo.git',
     tag      => 'gocode',
   }
@@ -60,6 +63,7 @@ class coverage::service (
     notify   => Exec['recompile'],
     path     =>"${gopath}/src/github.com/300brand/logger",
     provider => git,
+    revision => 'master',
     source   => 'git://github.com/300brand/logger.git',
     tag      => 'gocode',
   }
@@ -69,6 +73,7 @@ class coverage::service (
     notify   => Exec['recompile'],
     path     =>"${gopath}/src/github.com/300brand/go-toml-config",
     provider => git,
+    revision => 'master',
     source   => 'git://github.com/300brand/go-toml-config.git',
     tag      => 'gocode',
   }
@@ -78,6 +83,7 @@ class coverage::service (
     notify   => Exec['recompile'],
     path     =>"${gopath}/src/github.com/300brand/statsd",
     provider => git,
+    revision => 'master',
     source   => 'git://github.com/300brand/statsd.git',
     tag      => 'gocode',
   }
