@@ -3,7 +3,8 @@
 # Going to use the default bind_ip of 0.0.0.0
 # bind_ip   = <%= @fqdn %>,<%= @ipaddress_eth1 %>
 
-configsvr = true
-dbpath    = /var/lib/mongodb
-# port      = 27019 # set from configsvr option
-syslog    = true
+configsvr  = true
+dbpath     = /var/lib/mongodb
+port       = 27019 # set from configsvr option
+smallfiles = true
+syslog     = true
