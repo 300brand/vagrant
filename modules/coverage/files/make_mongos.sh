@@ -1,9 +1,14 @@
 #!/bin/sh
 T=`tempfile`
 NAME="$1"
+DAEMON="mongod"
 
 if [ -z $NAME ]; then
 	NAME=mongos
+fi
+
+if [ "$NAME" == "mongos" ]; then
+	DAEMON="mongos"
 fi
 
 cat > $T <<EOF
@@ -12,6 +17,9 @@ cat > $T <<EOF
 }
 /^DESC=/ {
 	\$0 = "DESC=$NAME"
+}
+/^DAEMON=/ {
+	gsub(/mongod/, "$DAEMON")
 }
 {
 	print
