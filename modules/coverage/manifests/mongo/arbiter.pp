@@ -27,10 +27,10 @@ define coverage::mongo::arbiter (
       notify  => Service["$arbiter"],
       owner   => root;
   }
-  exec { 'copy_arbiter_${replSet}':
+  exec { "copy_arbiter_${replSet}":
     command => '/bin/bash /vagrant/modules/coverage/files/make_mongos.sh',
     creates => '/etc/init.d/mongos',
-    notify  => Service["$replSet"],
+    notify  => Service["$arbiter"],
     require => Class['mongodb'],
   }
 
