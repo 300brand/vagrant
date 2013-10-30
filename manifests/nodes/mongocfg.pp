@@ -6,6 +6,12 @@ node /^\w+\.mongocfg\.\w+\.coverage\.net/ {
     coverage::mongo::arbiter {
       'rs0':
         port => 27020;
+      'rs1':
+        port => 27021;
+      'rs2':
+        port => 27022;
+      'rs3':
+        port => 27023;
     }
   }
 
