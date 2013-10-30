@@ -25,7 +25,7 @@ DAEMON_OPTS="--config /etc/coverage.toml"
 case "$1" in
 	start)
 		echo -n "Starting ${NAME}"
-		/sbin/start-stop-daemon --start --pidfile $PIDFILE --exec $DAEMON -- $DAEMON_OPTS
+		/sbin/start-stop-daemon --start --background --make-pidfile --pidfile $PIDFILE --exec $DAEMON -- $DAEMON_OPTS
 		echo "."
 		;;
 	stop)
@@ -36,7 +36,7 @@ case "$1" in
 	restart)
 		echo -n "Restarting ${NAME}"
 		/sbin/start-stop-daemon --stop --oknodo --retry 30 --pidfile $PIDFILE
-		/sbin/start-stop-daemon --start --pidfile $PIDFILE --exec $DAEMON -- $DAEMON_OPTS
+		/sbin/start-stop-daemon --start --background --make-pidfile --pidfile $PIDFILE --exec $DAEMON -- $DAEMON_OPTS
 		echo "."
 		;;
 	*)
