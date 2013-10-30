@@ -5,6 +5,7 @@
 
 dbpath     = /var/lib/mongo-<%= @arbiter %>
 replSet    = <%= @replSet %>
+nojournal  = true # Do not need a pre-allocated journal as an arbiter
 port       = <%= @port %>
 smallfiles = true
 syslog     = true
