@@ -7,7 +7,7 @@ if [ -z $NAME ]; then
 fi
 
 cat > $T <<EOF
-/^CONF=/ || /^NAME=/ || /^DAEMON=/ || /^# Provides:/ {
+/^CONF=/ || /^NAME=/ || /^# Provides:/ {
 	gsub(/mongodb?/, "$NAME")
 }
 /^DESC=/ {
