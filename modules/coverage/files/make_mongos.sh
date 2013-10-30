@@ -1,20 +1,25 @@
 #!/bin/sh
 T=`tempfile`
+NAME="$1"
 
-cat > $T <<"EOF"
+if [ -z $NAME ]; then
+	NAME=mongos
+fi
+
+cat > $T <<EOF
 /^CONF=/ || /^NAME=/ || /^DAEMON=/ || /^# Provides:/ {
-	gsub(/mongodb?/, "mongos")
+	gsub(/mongodb?/, "$NAME")
 }
 /^DESC=/ {
-	$0 = "DESC=mongos-router"
+	\$0 = "DESC=$NAME"
 }
 {
 	print
 }
 EOF
 
-/usr/bin/awk -f $T /etc/init.d/mongodb > /etc/init.d/mongos || exit 1
+/usr/bin/awk -f $T /etc/init.d/mongodb > /etc/init.d/$NAME || exit 1
 
-/bin/chmod +x /etc/init.d/mongos
+/bin/chmod +x /etc/init.d/$NAME
 
-/usr/sbin/update-rc.d mongos defaults || exit 1
+/usr/sbin/update-rc.d $NAME defaults || exit 1

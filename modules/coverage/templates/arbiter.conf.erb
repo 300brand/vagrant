@@ -1,0 +1,9 @@
+# File Managed by Puppet
+
+# Going to use the default bind_ip of 0.0.0.0
+# bind_ip   = <%= @fqdn %>,<%= @ipaddress_eth1 %>
+
+dbpath   = /var/lib/mongo-<%= @arbiter %>
+replSet  = <%= @replSet %>
+port     = <%= @port %>
+syslog   = true
