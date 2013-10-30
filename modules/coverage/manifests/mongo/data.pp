@@ -2,7 +2,10 @@
 #
 # Configures a mongod instance running in configsvr mode
 #
-class coverage::mongo::data ($replSet = undef) {
+class coverage::mongo::data (
+  $replSet = undef,
+  $port    = 27017,
+  ) {
   if $replSet == undef {
     fail('No replSet defined')
   }
@@ -14,6 +17,7 @@ class coverage::mongo::data ($replSet = undef) {
     template  => 'coverage/mongod.conf.erb',
     options   => {
       replSet => $replSet,
+      port    => $port,
     },
     require   => Fstab['mongo_storage'],
   }

@@ -4,6 +4,6 @@
 # bind_ip   = <%= @fqdn %>,<%= @ipaddress_eth1 %>
 
 dbpath  = /var/lib/mongodb
-# port    = 27017 # Default port
+port    = <%= scope.function_options_lookup(['port','27017']) %>
 replSet = <%= scope.function_options_lookup(['replSet','']) %>
 syslog  = true
