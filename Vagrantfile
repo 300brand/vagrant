@@ -34,7 +34,7 @@ configs = {
       'customize' => [
         ["modifyvm", :id, "--memory", 1024],
         ["modifyvm", :id, "--cpus", 2],
-        ["createhd", "--filename", "disks/campbeltown.stats.campbeltown.vdi", "--size", mongod_disk_size],
+        ["createhd", "--filename", "disks/campbeltown.stats.campbeltown.vdi", "--size", 250 * 1024],
         ["storageattach", :id, "--storagectl", "SATA Controller", "--port", 1, "--device", 0, "--type", "hdd", "--medium", "disks/campbeltown.stats.campbeltown.vdi"]
       ],
       'ip' => (vm_net = vm_net.succ()).to_s()
