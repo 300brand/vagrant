@@ -1,6 +1,14 @@
 #!/bin/sh
-MODULES="puppetlabs-stdlib puppetlabs-vcsrepo ajjahn-network ajjahn-dns example42-apt example42-mongodb example42-resolver AlexCline-mounts saz-gearman"
+MODULES="puppetlabs-stdlib puppetlabs-vcsrepo ajjahn-network ajjahn-dns example42-mongodb example42-resolver AlexCline-mounts saz-gearman"
 
 for MODULE in $MODULES; do
 	puppet module install $MODULE --target-dir=. --modulepath=.
 done
+
+if [ ! -d graphite ]; then
+	git clone git://github.com/300brand/puppet-graphite graphite
+fi
+
+if [ ! -d statsd ]; then
+	git clone git://github.com/300brand/puppet-statsd statsd
+fi
