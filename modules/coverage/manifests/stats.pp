@@ -3,6 +3,37 @@
 # Sets up and installs graphite and statsd
 #
 class coverage::stats {
+  $dir = '/opt'
+
+  exec {
+    'format_graphite':
+      command => '/sbin/mkfs.ext4 -F -L "GRAPHITE" /dev/sdb',
+      creates => '/dev/disk/by-label/GRAPHITE';
+    'mount_graphite':
+      command => "/bin/mount /dev/sdb $dir",
+      require => Exec['format_graphite'],
+      notify  => File[$dir],
+      unless  => "/bin/mountpoint -q $dir";
+  }
+  ->
+  file { $dir:
+    ensure  => directory,
+    group   => root,
+    owner   => root,
+  }
+  ->
+  fstab { 'graphite_storage':
+    ensure  => present,
+    dest    => $dir,
+    opts    => 'defaults',
+    require => [
+      Exec['format_graphite'],
+      Exec['mount_graphite'],
+    ],
+    source  => 'LABEL=GRAPHITE',
+    type    => 'ext4',
+  }
+  ->
   class { 'graphite':
     secret_key             => 'coverage.net',
     gr_enable_udp_listener => true,
@@ -24,7 +55,8 @@ class coverage::stats {
         retentions => '10s:6h,1m:7d,10m:5y',
       },
     ],
-  } ->
+  }
+  ->
   class { 'statsd':
     address          => '0.0.0.0',
     backends         => [
