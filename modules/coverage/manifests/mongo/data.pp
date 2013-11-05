@@ -13,12 +13,16 @@ class coverage::mongo::data (
   include coverage::mongo::mount
 
   class { 'mongodb':
-    use_10gen => true,
-    template  => 'coverage/mongod.conf.erb',
-    options   => {
-      replSet => $replSet,
-      port    => $port,
-    },
-    require   => Fstab['mongo_storage'],
+    enable_10gen => true,
+    dbpath       => '/var/lib/mongodb',
+    port         => $port,
+    replset      => $replSet,
+    rest         => true,
+    require      => Fstab['mongo_storage'],
+    # template  => 'coverage/mongod.conf.erb',
+    # options   => {
+    #   replSet => $replSet,
+    #   port    => $port,
+    # },
   }
 }

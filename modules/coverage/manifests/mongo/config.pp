@@ -4,7 +4,11 @@
 #
 class coverage::mongo::config {
   class { 'mongodb':
-    use_10gen => true,
-    template  => 'coverage/mongocfg.conf.erb',
+    enable_10gen => true,
+    dbpath       => '/var/lib/mongodb',
+    port         => 27019,
+    rest         => true,
+    smallfiles   => true,
+    #template  => 'coverage/mongocfg.conf.erb',
   }
 }
