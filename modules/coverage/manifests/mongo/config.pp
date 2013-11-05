@@ -9,6 +9,7 @@ class coverage::mongo::config {
     port         => 27019,
     rest         => true,
     smallfiles   => true,
+    syslog       => true,
     #template  => 'coverage/mongocfg.conf.erb',
   }
 }

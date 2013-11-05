@@ -19,6 +19,7 @@ class coverage::mongo::data (
     replset      => $replSet,
     rest         => true,
     require      => Fstab['mongo_storage'],
+    syslog       => true,
     # template  => 'coverage/mongod.conf.erb',
     # options   => {
     #   replSet => $replSet,
