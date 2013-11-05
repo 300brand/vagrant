@@ -7,6 +7,7 @@ class coverage::mongo::config {
     enable_10gen => true,
     configsvr    => true,
     dbpath       => '/var/lib/mongodb',
+    fork         => false,
     port         => 27019,
     rest         => true,
     smallfiles   => true,

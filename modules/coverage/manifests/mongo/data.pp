@@ -15,6 +15,7 @@ class coverage::mongo::data (
   class { 'mongodb':
     enable_10gen => true,
     dbpath       => '/var/lib/mongodb',
+    fork         => false,
     port         => $port,
     replset      => $replSet,
     rest         => true,
