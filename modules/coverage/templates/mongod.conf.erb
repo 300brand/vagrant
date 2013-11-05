@@ -6,4 +6,5 @@
 dbpath  = /var/lib/mongodb
 port    = <%= scope.function_options_lookup(['port','27017']) %>
 replSet = <%= scope.function_options_lookup(['replSet','']) %>
+rest    = true
 syslog  = true
