@@ -37,6 +37,7 @@ class coverage::stats {
   class { 'graphite':
     secret_key             => 'coverage.net',
     gr_enable_udp_listener => true,
+    gr_timezone            => 'America/New_York',
     gr_storage_schemas     => [
       {
         name       => 'default',
