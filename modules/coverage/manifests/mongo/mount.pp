@@ -16,12 +16,13 @@ class coverage::mongo::mount {
       unless  => "/bin/mountpoint -q $dir";
   }
 
-  file { $dir:
-    ensure  => directory,
-    group   => mongodb,
-    owner   => mongodb,
-    require => Package['mongodb'],
-  }
+  # Duplicate definition in mongodb module
+  # file { $dir:
+  #   ensure  => directory,
+  #   group   => mongodb,
+  #   owner   => mongodb,
+  #   require => Package['mongodb'],
+  # }
 
   fstab { 'mongo_storage':
     ensure  => present,
