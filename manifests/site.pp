@@ -1,4 +1,5 @@
 include coverage::puppet
+include coverage::collectd
 
 package { 'etckeeper':
   ensure => latest,
