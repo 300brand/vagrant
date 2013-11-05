@@ -29,7 +29,6 @@ class coverage::mongo::mount {
     dest    => $dir,
     opts    => 'defaults',
     require => [
-      Package['mongodb'],
       Exec['format_mongo_storage'],
       Exec['mount_mongo_storage'],
     ],
