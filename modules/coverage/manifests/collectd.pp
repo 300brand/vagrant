@@ -3,13 +3,13 @@
 # Installs collectd
 #
 class coverage::collectd {
-  class { 'collectd':
+  class { '::collectd':
     purge        => true,
     recurse      => true,
     purge_config => true,
   }
 
-  class { 'collectd::plugin::df':
+  class { '::collectd::plugin::df':
     mountpoints    => [
       '/dev',
       '/vagrant',
@@ -20,23 +20,23 @@ class coverage::collectd {
     ignoreselected => true,
   }
 
-  class { 'collectd::plugin::disk':
+  class { '::collectd::plugin::disk':
   }
 
-  class { 'collectd::plugin::interface':
+  class { '::collectd::plugin::interface':
     interfaces     => ['lo'],
     ignoreselected => true,
   }
 
-  class { 'collectd::plugin::syslog':
+  class { '::collectd::plugin::syslog':
     log_level => 'warning',
   }
 
-  class { 'collectd::plugin::write_graphite':
+  class { '::collectd::plugin::write_graphite':
     graphitehost => 'campbeltown.stats.campbeltown.coverage.net',
   }
 
-  file { "${collectd::params::plugin_conf_dir}/memory.conf":
+  file { "${::collectd::params::plugin_conf_dir}/memory.conf":
     ensure  => 'present',
     path    => "${collectd::params::plugin_conf_dir}/memory.conf",
     mode    => '0644',
@@ -46,7 +46,7 @@ class coverage::collectd {
     notify  => Service['collectd']
   }
 
-  file { "${collectd::params::plugin_conf_dir}/cpu.conf":
+  file { "${::collectd::params::plugin_conf_dir}/cpu.conf":
     ensure  => 'present',
     path    => "${collectd::params::plugin_conf_dir}/cpu.conf",
     mode    => '0644',
