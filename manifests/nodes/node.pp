@@ -4,17 +4,19 @@ node /^\w+\.node\.\w+\.coverage\.net/ {
   include coverage::mongo::shell
 
   limits::limits {
-    'mongodb_nofile':
+    'all_nofile':
       ensure     => present,
-      user       => 'mongodb',
+      user       => '*',
       limit_type => 'nofile',
-      both       => 64000,
+      hard       => 64000,
+      soft       => 4096,
       notify     => Service['mongodb'];
-    'mongodb_nproc':
+    'all_nproc':
       ensure     => present,
-      user       => 'mongodb',
+      user       => '*',
       limit_type => 'nproc',
-      both       => 32000,
+      hard       => 32000,
+      soft       => 2048,
       notify     => Service['mongodb'];
   }
 }
