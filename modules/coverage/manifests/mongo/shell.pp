@@ -49,6 +49,7 @@ class coverage::mongo::shell {
     ],
     dbpath       => '/var/lib/mongodb',
     fork         => false,
+    mongos       => true,
     port         => 27017,
     syslog       => true,
   }
