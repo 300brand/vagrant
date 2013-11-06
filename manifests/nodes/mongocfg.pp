@@ -1,6 +1,5 @@
 node /^\w+\.mongocfg\.\w+\.coverage\.net/ {
   include coverage::mongo::config
-  include coverage::mongo::shell
 
   if $fqdn == 'hazelburn.mongocfg.campbeltown.coverage.net' {
     coverage::mongo::arbiter {
