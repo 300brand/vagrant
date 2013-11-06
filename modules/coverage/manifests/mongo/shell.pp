@@ -32,7 +32,7 @@ class coverage::mongo::shell {
 
   file { '/etc/init.d/mongodb':
     ensure  => file,
-    content => template('coverage/mongodb_initd.erb')
+    content => template('coverage/mongodb_initd.erb'),
     group   => root,
     mode    => '0755',
     notify  => Service['mongodb'],
