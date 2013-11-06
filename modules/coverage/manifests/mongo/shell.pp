@@ -29,6 +29,17 @@ class coverage::mongo::shell {
   #   ensure  => running,
   #   require => Exec['copy_mongod_init']
   # }
+
+  file { '/etc/init.d/mongodb':
+    ensure  => file,
+    content => template('coverage/mongodb_initd.erb')
+    group   => root,
+    mode    => '0755',
+    notify  => Service['mongodb'],
+    owner   => root,
+    require => Package['mongodb-10gen'],
+  }
+
   class { 'mongodb':
     enable_10gen => true,
     configdb     => [
@@ -39,8 +50,6 @@ class coverage::mongo::shell {
     dbpath       => '/var/lib/mongodb',
     fork         => false,
     port         => 27017,
-    rest         => true,
-    smallfiles   => true,
     syslog       => true,
   }
 }
