@@ -5,7 +5,7 @@ package { 'etckeeper':
   ensure => latest,
 }
 
-package { 'ntpdate':
+package { 'ntp':
   ensure => latest,
 }
 
