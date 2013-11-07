@@ -27,6 +27,9 @@ physical_hostname = %x[hostname -f].chomp
 puts "Configuring for #{physical_hostname}"
 
 mongod_disk_size = 400 * 1024
+mongod_memory    =   3 * 1024
+mongod_cpus      =          1
+node_memory      =   1 * 1024
 
 configs = {
   "campbeltown.coverage.net" => {
@@ -59,13 +62,13 @@ configs = {
     },
     'longrow.node.campbeltown.coverage.net' => {
       'customize' => [
-        ["modifyvm", :id, "--memory", 1024]
+        ["modifyvm", :id, "--memory", node_memory]
       ],
       'ip' => (nameserver = vm_net = vm_net.succ()).to_s()
     },
     'springbank.node.campbeltown.coverage.net' => {
       'customize' => [
-        ["modifyvm", :id, "--memory", 1024]
+        ["modifyvm", :id, "--memory", node_memory]
       ],
       'ip' => (nameserver = vm_net = vm_net.succ()).to_s()
     }
@@ -73,8 +76,8 @@ configs = {
   "highland.coverage.net" => {
     'dalwhinnie.mongo.highland.coverage.net' => {
       'customize' => [
-        ["modifyvm", :id, "--memory", 7 * 1024],
-        ["modifyvm", :id, "--cpus", 4],
+        ["modifyvm", :id, "--memory", mongod_memory],
+        ["modifyvm", :id, "--cpus", mongod_cpus],
         ["createhd", "--filename", "disks/dalwhinnie.mongo.highland.vdi", "--size", mongod_disk_size],
         ["storageattach", :id, "--storagectl", "SATA Controller", "--port", 1, "--device", 0, "--type", "hdd", "--medium", "disks/dalwhinnie.mongo.highland.vdi"]
       ],
@@ -82,14 +85,14 @@ configs = {
     },
     'fettercairn.node.highland.coverage.net' => {
       'customize' => [
-        ["modifyvm", :id, "--memory", 1024]
+        ["modifyvm", :id, "--memory", node_memory]
       ],
       'ip' => (nameserver = vm_net = vm_net.succ()).to_s()
     },
     'glenmorangie.mongo.highland.coverage.net' => {
       'customize' => [
-        ["modifyvm", :id, "--memory", 7 * 1024],
-        ["modifyvm", :id, "--cpus", 4],
+        ["modifyvm", :id, "--memory", mongod_memory],
+        ["modifyvm", :id, "--cpus", mongod_cpus],
         ["createhd", "--filename", "disks/glenmorangie.mongo.highland.vdi", "--size", mongod_disk_size],
         ["storageattach", :id, "--storagectl", "SATA Controller", "--port", 1, "--device", 0, "--type", "hdd", "--medium", "disks/glenmorangie.mongo.highland.vdi"]
       ],
@@ -97,7 +100,7 @@ configs = {
     },
     'glenturret.node.highland.coverage.net' => {
       'customize' => [
-        ["modifyvm", :id, "--memory", 1024]
+        ["modifyvm", :id, "--memory", node_memory]
       ],
       'ip' => (nameserver = vm_net = vm_net.succ()).to_s()
     },
@@ -109,8 +112,8 @@ configs = {
     },
     'thedalmore.mongo.highland.coverage.net' => {
       'customize' => [
-        ["modifyvm", :id, "--memory", 1024],
-        ["modifyvm", :id, "--cpus", 2],
+        ["modifyvm", :id, "--memory", mongod_memory],
+        ["modifyvm", :id, "--cpus", mongod_cpus],
         ["createhd", "--filename", "disks/thedalmore.mongo.highland.vdi", "--size", mongod_disk_size],
         ["storageattach", :id, "--storagectl", "SATA Controller", "--port", 1, "--device", 0, "--type", "hdd", "--medium", "disks/thedalmore.mongo.highland.vdi"]
       ],
@@ -118,8 +121,8 @@ configs = {
     },
     'themacallan.mongo.highland.coverage.net' => {
       'customize' => [
-        ["modifyvm", :id, "--memory", 1024],
-        ["modifyvm", :id, "--cpus", 2],
+        ["modifyvm", :id, "--memory", mongod_memory],
+        ["modifyvm", :id, "--cpus", mongod_cpus],
         ["createhd", "--filename", "disks/themacallan.mongo.highland.vdi", "--size", mongod_disk_size],
         ["storageattach", :id, "--storagectl", "SATA Controller", "--port", 1, "--device", 0, "--type", "hdd", "--medium", "disks/themacallan.mongo.highland.vdi"]
       ],
@@ -129,14 +132,14 @@ configs = {
   "island.coverage.net" => {
     'arran.node.island.coverage.net' => {
       'customize' => [
-        ["modifyvm", :id, "--memory", 1024]
+        ["modifyvm", :id, "--memory", node_memory]
       ],
       'ip' => (nameserver = vm_net = vm_net.succ()).to_s()
     },
     'highlandpark.mongo.island.coverage.net' => {
       'customize' => [
-        ["modifyvm", :id, "--memory", 7 * 1024],
-        ["modifyvm", :id, "--cpus", 4],
+        ["modifyvm", :id, "--memory", mongod_memory],
+        ["modifyvm", :id, "--cpus", mongod_cpus],
         ["createhd", "--filename", "disks/highlandpark.mongo.island.vdi", "--size", mongod_disk_size],
         ["storageattach", :id, "--storagectl", "SATA Controller", "--port", 1, "--device", 0, "--type", "hdd", "--medium", "disks/highlandpark.mongo.island.vdi"]
       ],
@@ -144,8 +147,8 @@ configs = {
     },
     'isleofjura.mongo.island.coverage.net' => {
       'customize' => [
-        ["modifyvm", :id, "--memory", 1024],
-        ["modifyvm", :id, "--cpus", 2],
+        ["modifyvm", :id, "--memory", mongod_memory],
+        ["modifyvm", :id, "--cpus", mongod_cpus],
         ["createhd", "--filename", "disks/isleofjura.mongo.island.vdi", "--size", mongod_disk_size],
         ["storageattach", :id, "--storagectl", "SATA Controller", "--port", 1, "--device", 0, "--type", "hdd", "--medium", "disks/isleofjura.mongo.island.vdi"]
       ],
@@ -153,8 +156,8 @@ configs = {
     },
     'ledaig.mongo.island.coverage.net' => {
       'customize' => [
-        ["modifyvm", :id, "--memory", 7 * 1024],
-        ["modifyvm", :id, "--cpus", 4],
+        ["modifyvm", :id, "--memory", mongod_memory],
+        ["modifyvm", :id, "--cpus", mongod_cpus],
         ["createhd", "--filename", "disks/ledaig.mongo.island.vdi", "--size", mongod_disk_size],
         ["storageattach", :id, "--storagectl", "SATA Controller", "--port", 1, "--device", 0, "--type", "hdd", "--medium", "disks/ledaig.mongo.island.vdi"]
       ],
@@ -162,7 +165,7 @@ configs = {
     },
     'scapa.node.island.coverage.net' => {
       'customize' => [
-        ["modifyvm", :id, "--memory", 1024]
+        ["modifyvm", :id, "--memory", node_memory]
       ],
       'ip' => (nameserver = vm_net = vm_net.succ()).to_s()
     },
@@ -174,8 +177,8 @@ configs = {
     },
     'tobermory.mongo.island.coverage.net' => {
       'customize' => [
-        ["modifyvm", :id, "--memory", 1024],
-        ["modifyvm", :id, "--cpus", 2],
+        ["modifyvm", :id, "--memory", mongod_memory],
+        ["modifyvm", :id, "--cpus", mongod_cpus],
         ["createhd", "--filename", "disks/tobermory.mongo.island.vdi", "--size", mongod_disk_size],
         ["storageattach", :id, "--storagectl", "SATA Controller", "--port", 1, "--device", 0, "--type", "hdd", "--medium", "disks/tobermory.mongo.island.vdi"]
       ],
