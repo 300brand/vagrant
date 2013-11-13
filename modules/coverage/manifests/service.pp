@@ -88,6 +88,16 @@ class coverage::service (
     tag      => 'gocode',
   }
 
+  vcsrepo { 'statsd':
+    ensure   => latest,
+    notify   => Exec['recompile'],
+    path     =>"${gopath}/src/github.com/moovweb/gokogiri",
+    provider => git,
+    revision => 'master',
+    source   => 'git://github.com/moovweb/gokogiri.git',
+    tag      => 'gocode',
+  }
+
   # Establish dependency where all repos must update before recompiling
   Vcsrepo <| tag == 'gocode' |> -> Exec['recompile']
 
