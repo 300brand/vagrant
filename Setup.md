@@ -8,7 +8,7 @@ Basic utilities - start out as root
 	# git config --global user.name root
 	# git config --global user.email root@`hostname -f`
 	# apt-get install etckeeper
-	# apt-get install ntpdate
+	# apt-get install ntp
 
 sudo
 
