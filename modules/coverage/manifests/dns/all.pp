@@ -12,27 +12,11 @@ class coverage::dns::all {
       ptr  => true;
     'campbeltown.stats.campbeltown':
       zone => 'coverage.net',
-      data => ['192.168.20.33'],
+      data => ['192.168.20.17'],
       ptr  => true;
     'glenscotia.dns.campbeltown':
       zone => 'coverage.net',
-      data => ['192.168.20.34'],
-      ptr  => true;
-    'hazelburn.mongocfg.campbeltown':
-      zone => 'coverage.net',
-      data => ['192.168.20.35'],
-      ptr  => true;
-    'kilkerran.puppetmaster.campbeltown':
-      zone => 'coverage.net',
-      data => ['192.168.20.36'],
-      ptr  => true;
-    'longrow.node.campbeltown':
-      zone => 'coverage.net',
-      data => ['192.168.20.37'],
-      ptr  => true;
-    'springbank.node.campbeltown':
-      zone => 'coverage.net',
-      data => ['192.168.20.38'],
+      data => ['192.168.20.17'],
       ptr  => true;
     'highland':
       zone => 'coverage.net',
@@ -97,6 +81,46 @@ class coverage::dns::all {
     'tobermory.mongo.island':
       zone => 'coverage.net',
       data => ['192.168.20.52'],
+      ptr  => true;
+    'lowland':
+      zone => 'coverage.net',
+      data => ['192.168.20.20'],
+      ptr  => true;
+    'ailsabay.node.lowland':
+      zone => 'coverage.net',
+      data => ['192.168.20.53'],
+      ptr  => true;
+    'annandale.mongo.lowland':
+      zone => 'coverage.net',
+      data => ['192.168.20.54'],
+      ptr  => true;
+    'auchentoshan.mongo.lowland':
+      zone => 'coverage.net',
+      data => ['192.168.20.55'],
+      ptr  => true;
+    'bladnoch.mongo.lowland':
+      zone => 'coverage.net',
+      data => ['192.168.20.56'],
+      ptr  => true;
+    'daftmill.node.lowland':
+      zone => 'coverage.net',
+      data => ['192.168.20.57'],
+      ptr  => true;
+    'glenkinchie.mongocfg.lowland':
+      zone => 'coverage.net',
+      data => ['192.168.20.58'],
+      ptr  => true;
+    'inverleven.mongo.lowland':
+      zone => 'coverage.net',
+      data => ['192.168.20.59'],
+      ptr  => true;
+    'islay':
+      zone => 'coverage.net',
+      data => ['192.168.20.21'],
+      ptr  => true;
+    'ardbeg.dns.islay':
+      zone => 'coverage.net',
+      data => ['192.168.20.21'],
       ptr  => true;
   }
 }

@@ -15,10 +15,10 @@ new servers.
 
 1. __Campbeltown__
 1. __GlenScotia__
-1. __Hazelburn__
-1. __Kilkerran__
-1. __Longrow__
-1. __Springbank__
+1. Hazelburn
+1. Kilkerran
+1. Longrow
+1. Springbank
 
 ### Highland
 
@@ -63,7 +63,7 @@ new servers.
 
 ### Islay
 
-1. Ardbeg
+1. __Ardbeg__
 1. Bowmore
 1. Bruichladdich
 1. Bunnahabhain
@@ -77,13 +77,13 @@ new servers.
 
 ### Lowland
 
-1. AilsaBay
-1. Annandale
-1. Auchentoshan
-1. Bladnoch
-1. Daftmill
-1. Glenkinchie
-1. Inverleven
+1. __AilsaBay__
+1. __Annandale__
+1. __Auchentoshan__
+1. __Bladnoch__
+1. __Daftmill__
+1. __Glenkinchie__
+1. __Inverleven__
 1. Kinclaith
 1. Ladyburn
 1. Rosebank

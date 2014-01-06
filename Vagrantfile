@@ -40,37 +40,13 @@ configs = {
         ["createhd", "--filename", "disks/campbeltown.stats.campbeltown.vdi", "--size", 250 * 1024],
         ["storageattach", :id, "--storagectl", "SATA Controller", "--port", 1, "--device", 0, "--type", "hdd", "--medium", "disks/campbeltown.stats.campbeltown.vdi"]
       ],
-      'ip' => (vm_net = vm_net.succ()).to_s()
+      'ip' => "192.168.20.17"
     },
     'glenscotia.dns.campbeltown.coverage.net' => {
       'customize' => [
         ["modifyvm", :id, "--memory", 128]
       ],
-      'ip' => (vm_net = vm_net.succ()).to_s()
-    },
-    'hazelburn.mongocfg.campbeltown.coverage.net' => {
-      'customize' => [
-        ["modifyvm", :id, "--memory", 256]
-      ],
-      'ip' => (vm_net = vm_net.succ()).to_s()
-    },
-    'kilkerran.puppetmaster.campbeltown.coverage.net' => {
-      'customize' => [
-        ["modifyvm", :id, "--memory", 128]
-      ],
-      'ip' => (nameserver = vm_net = vm_net.succ()).to_s()
-    },
-    'longrow.node.campbeltown.coverage.net' => {
-      'customize' => [
-        ["modifyvm", :id, "--memory", node_memory]
-      ],
-      'ip' => (nameserver = vm_net = vm_net.succ()).to_s()
-    },
-    'springbank.node.campbeltown.coverage.net' => {
-      'customize' => [
-        ["modifyvm", :id, "--memory", node_memory]
-      ],
-      'ip' => (nameserver = vm_net = vm_net.succ()).to_s()
+      'ip' => "192.168.20.17"
     }
   },
   "highland.coverage.net" => {
@@ -81,13 +57,13 @@ configs = {
         ["createhd", "--filename", "disks/dalwhinnie.mongo.highland.vdi", "--size", mongod_disk_size],
         ["storageattach", :id, "--storagectl", "SATA Controller", "--port", 1, "--device", 0, "--type", "hdd", "--medium", "disks/dalwhinnie.mongo.highland.vdi"]
       ],
-      'ip' => (vm_net = vm_net.succ()).to_s()
+      'ip' => "192.168.20.39"
     },
     'fettercairn.node.highland.coverage.net' => {
       'customize' => [
         ["modifyvm", :id, "--memory", node_memory]
       ],
-      'ip' => (nameserver = vm_net = vm_net.succ()).to_s()
+      'ip' => "192.168.20.40"
     },
     'glenmorangie.mongo.highland.coverage.net' => {
       'customize' => [
@@ -96,19 +72,19 @@ configs = {
         ["createhd", "--filename", "disks/glenmorangie.mongo.highland.vdi", "--size", mongod_disk_size],
         ["storageattach", :id, "--storagectl", "SATA Controller", "--port", 1, "--device", 0, "--type", "hdd", "--medium", "disks/glenmorangie.mongo.highland.vdi"]
       ],
-      'ip' => (vm_net = vm_net.succ()).to_s()
+      'ip' => "192.168.20.41"
     },
     'glenturret.node.highland.coverage.net' => {
       'customize' => [
         ["modifyvm", :id, "--memory", node_memory]
       ],
-      'ip' => (nameserver = vm_net = vm_net.succ()).to_s()
+      'ip' => "192.168.20.42"
     },
     'oldpulteney.mongocfg.highland.coverage.net' => {
       'customize' => [
         ["modifyvm", :id, "--memory", 256]
       ],
-      'ip' => (vm_net = vm_net.succ()).to_s()
+      'ip' => "192.168.20.43"
     },
     'thedalmore.mongo.highland.coverage.net' => {
       'customize' => [
@@ -117,7 +93,7 @@ configs = {
         ["createhd", "--filename", "disks/thedalmore.mongo.highland.vdi", "--size", mongod_disk_size],
         ["storageattach", :id, "--storagectl", "SATA Controller", "--port", 1, "--device", 0, "--type", "hdd", "--medium", "disks/thedalmore.mongo.highland.vdi"]
       ],
-      'ip' => (vm_net = vm_net.succ()).to_s()
+      'ip' => "192.168.20.44"
     },
     'themacallan.mongo.highland.coverage.net' => {
       'customize' => [
@@ -126,7 +102,7 @@ configs = {
         ["createhd", "--filename", "disks/themacallan.mongo.highland.vdi", "--size", mongod_disk_size],
         ["storageattach", :id, "--storagectl", "SATA Controller", "--port", 1, "--device", 0, "--type", "hdd", "--medium", "disks/themacallan.mongo.highland.vdi"]
       ],
-      'ip' => (vm_net = vm_net.succ()).to_s()
+      'ip' => "192.168.20.45"
     }
   },
   "island.coverage.net" => {
@@ -134,7 +110,7 @@ configs = {
       'customize' => [
         ["modifyvm", :id, "--memory", node_memory]
       ],
-      'ip' => (nameserver = vm_net = vm_net.succ()).to_s()
+      'ip' => "192.168.20.46"
     },
     'highlandpark.mongo.island.coverage.net' => {
       'customize' => [
@@ -143,7 +119,7 @@ configs = {
         ["createhd", "--filename", "disks/highlandpark.mongo.island.vdi", "--size", mongod_disk_size],
         ["storageattach", :id, "--storagectl", "SATA Controller", "--port", 1, "--device", 0, "--type", "hdd", "--medium", "disks/highlandpark.mongo.island.vdi"]
       ],
-      'ip' => (vm_net = vm_net.succ()).to_s()
+      'ip' => "192.168.20.47"
     },
     'isleofjura.mongo.island.coverage.net' => {
       'customize' => [
@@ -152,7 +128,7 @@ configs = {
         ["createhd", "--filename", "disks/isleofjura.mongo.island.vdi", "--size", mongod_disk_size],
         ["storageattach", :id, "--storagectl", "SATA Controller", "--port", 1, "--device", 0, "--type", "hdd", "--medium", "disks/isleofjura.mongo.island.vdi"]
       ],
-      'ip' => (vm_net = vm_net.succ()).to_s()
+      'ip' => "192.168.20.48"
     },
     'ledaig.mongo.island.coverage.net' => {
       'customize' => [
@@ -161,19 +137,19 @@ configs = {
         ["createhd", "--filename", "disks/ledaig.mongo.island.vdi", "--size", mongod_disk_size],
         ["storageattach", :id, "--storagectl", "SATA Controller", "--port", 1, "--device", 0, "--type", "hdd", "--medium", "disks/ledaig.mongo.island.vdi"]
       ],
-      'ip' => (vm_net = vm_net.succ()).to_s()
+      'ip' => "192.168.20.49"
     },
     'scapa.node.island.coverage.net' => {
       'customize' => [
         ["modifyvm", :id, "--memory", node_memory]
       ],
-      'ip' => (nameserver = vm_net = vm_net.succ()).to_s()
+      'ip' => "192.168.20.50"
     },
     'talisker.mongocfg.island.coverage.net' => {
       'customize' => [
         ["modifyvm", :id, "--memory", 256]
       ],
-      'ip' => (vm_net = vm_net.succ()).to_s()
+      'ip' => "192.168.20.51"
     },
     'tobermory.mongo.island.coverage.net' => {
       'customize' => [
@@ -182,7 +158,71 @@ configs = {
         ["createhd", "--filename", "disks/tobermory.mongo.island.vdi", "--size", mongod_disk_size],
         ["storageattach", :id, "--storagectl", "SATA Controller", "--port", 1, "--device", 0, "--type", "hdd", "--medium", "disks/tobermory.mongo.island.vdi"]
       ],
-      'ip' => (vm_net = vm_net.succ()).to_s()
+      'ip' => "192.168.20.52"
+    }
+  },
+  "lowland.coverage.net" => {
+    'ailsabay.node.lowland.coverage.net' => {
+      'customize' => [
+        ["modifyvm", :id, "--memory", node_memory]
+      ],
+      'ip' => "192.168.20.53"
+    },
+    'annandale.mongo.lowland.coverage.net' => {
+      'customize' => [
+        ["modifyvm", :id, "--memory", mongod_memory],
+        ["modifyvm", :id, "--cpus", mongod_cpus],
+        ["createhd", "--filename", "disks/annandale.mongo.lowland.vdi", "--size", mongod_disk_size],
+        ["storageattach", :id, "--storagectl", "SATA Controller", "--port", 1, "--device", 0, "--type", "hdd", "--medium", "disks/annandale.mongo.lowland.vdi"]
+      ],
+      'ip' => "192.168.20.54"
+    },
+    'auchentoshan.mongo.lowland.coverage.net' => {
+      'customize' => [
+        ["modifyvm", :id, "--memory", mongod_memory],
+        ["modifyvm", :id, "--cpus", mongod_cpus],
+        ["createhd", "--filename", "disks/auchentoshan.mongo.lowland.vdi", "--size", mongod_disk_size],
+        ["storageattach", :id, "--storagectl", "SATA Controller", "--port", 1, "--device", 0, "--type", "hdd", "--medium", "disks/auchentoshan.mongo.lowland.vdi"]
+      ],
+      'ip' => "192.168.20.55"
+    },
+    'bladnoch.mongo.lowland.coverage.net' => {
+      'customize' => [
+        ["modifyvm", :id, "--memory", mongod_memory],
+        ["modifyvm", :id, "--cpus", mongod_cpus],
+        ["createhd", "--filename", "disks/bladnoch.mongo.lowland.vdi", "--size", mongod_disk_size],
+        ["storageattach", :id, "--storagectl", "SATA Controller", "--port", 1, "--device", 0, "--type", "hdd", "--medium", "disks/bladnoch.mongo.lowland.vdi"]
+      ],
+      'ip' => "192.168.20.56"
+    },
+    'daftmill.node.lowland.coverage.net' => {
+      'customize' => [
+        ["modifyvm", :id, "--memory", node_memory]
+      ],
+      'ip' => "192.168.20.57"
+    },
+    'glenkinchie.mongocfg.lowland.coverage.net' => {
+      'customize' => [
+        ["modifyvm", :id, "--memory", 256]
+      ],
+      'ip' => "192.168.20.58"
+    },
+    'inverleven.mongo.lowland.coverage.net' => {
+      'customize' => [
+        ["modifyvm", :id, "--memory", mongod_memory],
+        ["modifyvm", :id, "--cpus", mongod_cpus],
+        ["createhd", "--filename", "disks/inverleven.mongo.lowland.vdi", "--size", mongod_disk_size],
+        ["storageattach", :id, "--storagectl", "SATA Controller", "--port", 1, "--device", 0, "--type", "hdd", "--medium", "disks/inverleven.mongo.lowland.vdi"]
+      ],
+      'ip' => "192.168.20.59"
+    }
+  },
+  'islay.coverage.net' => {
+    'ardbeg.dns.islay.coverage.net' => {
+      'customize' => [
+        ["modifyvm", :id, "--memory", 128]
+      ],
+      'ip' => "192.168.20.21"
     }
   }
 }
