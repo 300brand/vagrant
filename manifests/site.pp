@@ -11,7 +11,7 @@ package { 'ntp':
 
 class { 'resolver':
   dns_domain  => 'coverage.net',
-  dns_servers => ['192.168.20.17', '192.168.20.21'],
+  dns_servers => ['192.168.20.20', '192.168.20.21'],
 }
 
 import 'nodes/*.pp'
