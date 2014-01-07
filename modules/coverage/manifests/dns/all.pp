@@ -109,11 +109,11 @@ class coverage::dns::all {
     'ailsabay.stats.lowland':
       zone => 'coverage.net',
       data => ['192.168.20.20'],
-      ptr  => true;
+      ptr  => false;
     'annandale.dns.lowland':
       zone => 'coverage.net',
       data => ['192.168.20.20'],
-      ptr  => true;
+      ptr  => false;
     'islay':
       zone => 'coverage.net',
       data => ['192.168.20.21'],
@@ -121,6 +121,6 @@ class coverage::dns::all {
     'ardbeg.dns.islay':
       zone => 'coverage.net',
       data => ['192.168.20.21'],
-      ptr  => true;
+      ptr  => false;
   }
 }

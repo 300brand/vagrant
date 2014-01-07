@@ -244,13 +244,13 @@ recordf = <<-RECORD
     '%s':
       zone => 'coverage.net',
       data => ['%s'],
-      ptr  => true;
+      ptr  => %s;
 RECORD
 
 configs.each do |ph_name, vm_configs|
-  dns_f.printf(recordf, ph_name.partition(".coverage.net").first, (ph_net = ph_net.succ()).to_s())
+  dns_f.printf(recordf, ph_name.partition(".coverage.net").first, (ph_net = ph_net.succ()).to_s(), 'true')
   vm_configs.each do |vm_name, vm_config|
-    dns_f.printf(recordf, vm_name.partition(".coverage.net").first, vm_config['ip'])
+    dns_f.printf(recordf, vm_name.partition(".coverage.net").first, vm_config['ip'], (ph_net != vm_config['ip'])?'true':'false')
   end
 end
 
