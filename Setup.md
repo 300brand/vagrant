@@ -1,6 +1,19 @@
 Setup
 =====
 
+Upgrade wheezy -> jessie
+
+	# cat <<EOF > /etc/apt/sources.list
+	deb http://mirrors.kernel.org/debian/ jessie main contrib non-free
+	deb-src http://mirrors.kernel.org/debian/ jessie main contrib non-free
+
+	deb http://security.debian.org/ jessie/updates main
+	deb-src http://security.debian.org/ jessie/updates main
+	EOF
+	# apt-get update
+	# apt-get dist-upgrade
+
+
 Basic utilities - start out as root
 
 	# apt-get purge nano
