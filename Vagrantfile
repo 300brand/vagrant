@@ -308,7 +308,7 @@ Vagrant.configure("2") do |config|
           "eth1_broadcast"     => "192.168.20.63",
           "eth1_gateway"       => "192.168.20.1",
           "eth1_network"       => "192.168.20.32",
-          "nameserver"         => nameserver,
+          "nameserver"         => "192.168.20.20",
         }
         puppet.manifest_file   = "eth1.pp"
         puppet.manifests_path  = "manifests"
