@@ -33,20 +33,59 @@ node_memory      =   1 * 1024
 
 configs = {
   "campbeltown.coverage.net" => {
-    'campbeltown.stats.campbeltown.coverage.net' => {
+    'hazelburn.mongocfg.campbeltown.coverage.net' => {
       'customize' => [
-        ["modifyvm", :id, "--memory", 1024],
-        ["modifyvm", :id, "--cpus", 2],
-        ["createhd", "--filename", "disks/campbeltown.stats.campbeltown.vdi", "--size", 250 * 1024],
-        ["storageattach", :id, "--storagectl", "SATA Controller", "--port", 1, "--device", 0, "--type", "hdd", "--medium", "disks/campbeltown.stats.campbeltown.vdi"]
+        ["modifyvm", :id, "--memory", 256]
       ],
-      'ip' => "192.168.20.17"
+      'ip' => "192.168.20.33"
     },
-    'glenscotia.dns.campbeltown.coverage.net' => {
+    'campbeltown.mongo.campbeltown.coverage.net' => {
       'customize' => [
-        ["modifyvm", :id, "--memory", 128]
+        ["modifyvm", :id, "--memory", mongod_memory],
+        ["modifyvm", :id, "--cpus", mongod_cpus],
+        ["createhd", "--filename", "disks/campbeltown.mongo.campbeltown.vdi", "--size", mongod_disk_size],
+        ["storageattach", :id, "--storagectl", "SATA Controller", "--port", 1, "--device", 0, "--type", "hdd", "--medium", "disks/campbeltown.mongo.campbeltown.vdi"]
       ],
-      'ip' => "192.168.20.17"
+      'ip' => "192.168.20.34"
+    },
+    'glenscotia.mongo.campbeltown.coverage.net' => {
+      'customize' => [
+        ["modifyvm", :id, "--memory", mongod_memory],
+        ["modifyvm", :id, "--cpus", mongod_cpus],
+        ["createhd", "--filename", "disks/glenscotia.mongo.campbeltown.vdi", "--size", mongod_disk_size],
+        ["storageattach", :id, "--storagectl", "SATA Controller", "--port", 1, "--device", 0, "--type", "hdd", "--medium", "disks/glenscotia.mongo.campbeltown.vdi"]
+      ],
+      'ip' => "192.168.20.35"
+    },
+    'kilkerran.mongo.campbeltown.coverage.net' => {
+      'customize' => [
+        ["modifyvm", :id, "--memory", mongod_memory],
+        ["modifyvm", :id, "--cpus", mongod_cpus],
+        ["createhd", "--filename", "disks/kilkerran.mongo.campbeltown.vdi", "--size", mongod_disk_size],
+        ["storageattach", :id, "--storagectl", "SATA Controller", "--port", 1, "--device", 0, "--type", "hdd", "--medium", "disks/kilkerran.mongo.campbeltown.vdi"]
+      ],
+      'ip' => "192.168.20.36"
+    },
+    'longrow.mongo.campbeltown.coverage.net' => {
+      'customize' => [
+        ["modifyvm", :id, "--memory", mongod_memory],
+        ["modifyvm", :id, "--cpus", mongod_cpus],
+        ["createhd", "--filename", "disks/longrow.mongo.campbeltown.vdi", "--size", mongod_disk_size],
+        ["storageattach", :id, "--storagectl", "SATA Controller", "--port", 1, "--device", 0, "--type", "hdd", "--medium", "disks/longrow.mongo.campbeltown.vdi"]
+      ],
+      'ip' => "192.168.20.37"
+    },
+    'springbank.node.campbeltown.coverage.net' => {
+      'customize' => [
+        ["modifyvm", :id, "--memory", node_memory]
+      ],
+      'ip' => "192.168.20.38"
+    },
+    'glengyle.node.campbeltown.coverage.net' => {
+      'customize' => [
+        ["modifyvm", :id, "--memory", node_memory]
+      ],
+      'ip' => "192.168.20.53"
     }
   },
   "highland.coverage.net" => {
@@ -162,66 +201,27 @@ configs = {
     }
   },
   "lowland.coverage.net" => {
-    'ailsabay.node.lowland.coverage.net' => {
-      'customize' => [
-        ["modifyvm", :id, "--memory", node_memory]
-      ],
-      'ip' => "192.168.20.53"
+    'ailsabay.stats.lowland.coverage.net' => {
+      # 'customize' => [
+      #   ["modifyvm", :id, "--memory", 1024],
+      #   ["modifyvm", :id, "--cpus", 2],
+      #   ["createhd", "--filename", "disks/ailsabay.stats.lowland.vdi", "--size", 250 * 1024],
+      #   ["storageattach", :id, "--storagectl", "SATA Controller", "--port", 1, "--device", 0, "--type", "hdd", "--medium", "disks/ailsabay.stats.lowland.vdi"]
+      # ],
+      'ip' => "192.168.20.20"
     },
-    'annandale.mongo.lowland.coverage.net' => {
-      'customize' => [
-        ["modifyvm", :id, "--memory", mongod_memory],
-        ["modifyvm", :id, "--cpus", mongod_cpus],
-        ["createhd", "--filename", "disks/annandale.mongo.lowland.vdi", "--size", mongod_disk_size],
-        ["storageattach", :id, "--storagectl", "SATA Controller", "--port", 1, "--device", 0, "--type", "hdd", "--medium", "disks/annandale.mongo.lowland.vdi"]
-      ],
-      'ip' => "192.168.20.54"
+    'annandale.dns.lowland.coverage.net' => {
+      # 'customize' => [
+      #   ["modifyvm", :id, "--memory", 128]
+      # ],
+      'ip' => "192.168.20.20"
     },
-    'auchentoshan.mongo.lowland.coverage.net' => {
-      'customize' => [
-        ["modifyvm", :id, "--memory", mongod_memory],
-        ["modifyvm", :id, "--cpus", mongod_cpus],
-        ["createhd", "--filename", "disks/auchentoshan.mongo.lowland.vdi", "--size", mongod_disk_size],
-        ["storageattach", :id, "--storagectl", "SATA Controller", "--port", 1, "--device", 0, "--type", "hdd", "--medium", "disks/auchentoshan.mongo.lowland.vdi"]
-      ],
-      'ip' => "192.168.20.55"
-    },
-    'bladnoch.mongo.lowland.coverage.net' => {
-      'customize' => [
-        ["modifyvm", :id, "--memory", mongod_memory],
-        ["modifyvm", :id, "--cpus", mongod_cpus],
-        ["createhd", "--filename", "disks/bladnoch.mongo.lowland.vdi", "--size", mongod_disk_size],
-        ["storageattach", :id, "--storagectl", "SATA Controller", "--port", 1, "--device", 0, "--type", "hdd", "--medium", "disks/bladnoch.mongo.lowland.vdi"]
-      ],
-      'ip' => "192.168.20.56"
-    },
-    'daftmill.node.lowland.coverage.net' => {
-      'customize' => [
-        ["modifyvm", :id, "--memory", node_memory]
-      ],
-      'ip' => "192.168.20.57"
-    },
-    'glenkinchie.mongocfg.lowland.coverage.net' => {
-      'customize' => [
-        ["modifyvm", :id, "--memory", 256]
-      ],
-      'ip' => "192.168.20.58"
-    },
-    'inverleven.mongo.lowland.coverage.net' => {
-      'customize' => [
-        ["modifyvm", :id, "--memory", mongod_memory],
-        ["modifyvm", :id, "--cpus", mongod_cpus],
-        ["createhd", "--filename", "disks/inverleven.mongo.lowland.vdi", "--size", mongod_disk_size],
-        ["storageattach", :id, "--storagectl", "SATA Controller", "--port", 1, "--device", 0, "--type", "hdd", "--medium", "disks/inverleven.mongo.lowland.vdi"]
-      ],
-      'ip' => "192.168.20.59"
-    }
   },
-  'islay.coverage.net' => {
+  "islay.coverage.net" => {
     'ardbeg.dns.islay.coverage.net' => {
-      'customize' => [
-        ["modifyvm", :id, "--memory", 128]
-      ],
+      # 'customize' => [
+      #   ["modifyvm", :id, "--memory", 128]
+      # ],
       'ip' => "192.168.20.21"
     }
   }
