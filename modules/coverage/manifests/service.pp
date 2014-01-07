@@ -88,7 +88,7 @@ class coverage::service (
     tag      => 'gocode',
   }
 
-  vcsrepo { 'statsd':
+  vcsrepo { 'gokogiri':
     ensure   => latest,
     notify   => Exec['recompile'],
     path     =>"${gopath}/src/github.com/moovweb/gokogiri",
