@@ -18,5 +18,6 @@ node /^\w+\.mongocfg\.\w+\.coverage\.net/ {
   class { 'gearman':
     listen                => $ipaddress_eth1,
     disable_limits_module => true,
+    config_file_template  => 'coverage/gearman.erb',
   }
 }
