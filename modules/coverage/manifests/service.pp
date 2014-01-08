@@ -16,7 +16,8 @@ class coverage::service (
       content => template('coverage/gopath.sh.erb');
     '/etc/coverage.toml':
       ensure  => file,
-      content => template('coverage/coverage.toml.erb');
+      content => template('coverage/coverage.toml.erb'),
+      mode    => '0644';
     '/etc/init.d/coverageservices':
       ensure  => file,
       content => template('coverage/coverage_initd.erb'),
