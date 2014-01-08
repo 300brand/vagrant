@@ -33,7 +33,7 @@ class coverage::collectd {
   }
 
   class { '::collectd::plugin::write_graphite':
-    graphitehost => 'campbeltown.stats.campbeltown.coverage.net',
+    graphitehost => 'ailsabay.stats.lowland.coverage.net',
   }
 
   file { "${::collectd::params::plugin_conf_dir}/memory.conf":
