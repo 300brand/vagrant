@@ -10,6 +10,8 @@ class coverage::golang {
       ensure => present;
     'mercurial':
       ensure => present;
+    'go':
+      ensure => absent;
     'golang-go':
       ensure => present;
   }
