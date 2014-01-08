@@ -101,13 +101,17 @@ class coverage::service (
   # # Establish dependency where all repos must update before recompiling
   # Vcsrepo <| tag == 'gocode' |> -> Exec['recompile']
 
-  # package { 'libxml2-dev':
-  #   ensure => installed,
-  # }
+  package { 'libxml2-dev':
+    ensure => installed,
+  }
 
-  # package { 'pkg-config':
-  #   ensure => installed,
-  # }
+  package { 'pkg-config':
+    ensure => installed,
+  }
+
+  package { 'libsqlite3-dev':
+    ensure => installed,
+  }
 
   # $service_pkg = 'github.com/300brand/coverageservices'
   # exec { 'recompile':
