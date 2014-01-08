@@ -18,6 +18,8 @@ node /^\w+\.mongocfg\.\w+\.coverage\.net/ {
   class { 'gearman':
     listen                => $ipaddress_eth1,
     disable_limits_module => true,
+    queue_type            => 'builtin',
+    queue_params          => '--round-robin',
     config_file_template  => 'coverage/gearman.erb',
   }
 }
