@@ -10,8 +10,6 @@ class coverage::mongo::data (
     fail('No replSet defined')
   }
 
-  include coverage::mongo::mount
-
   class { 'mongodb':
     enable_10gen => true,
     dbpath       => '/var/lib/mongodb',
@@ -19,7 +17,7 @@ class coverage::mongo::data (
     port         => $port,
     replset      => $replSet,
     rest         => true,
-    require      => Fstab['mongo_storage'],
+    notify       => Fstab['mongo_storage'],
     syslog       => true,
     # template  => 'coverage/mongod.conf.erb',
     # options   => {
@@ -27,4 +25,6 @@ class coverage::mongo::data (
     #   port    => $port,
     # },
   }
+
+  include coverage::mongo::mount
 }

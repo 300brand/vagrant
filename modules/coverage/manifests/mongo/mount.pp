@@ -12,18 +12,17 @@ class coverage::mongo::mount {
     'mount_mongo_storage':
       command => "/bin/mount /dev/sdb $dir",
       require => Exec['format_mongo_storage'],
-      notify  => File['mongo_dir'],
+      notify  => File[$dir],
       unless  => "/bin/mountpoint -q $dir";
   }
 
   # Duplicate definition in mongodb module
-  file { 'mongo_dir':
-    path    => $dir,
-    ensure  => directory,
-    group   => mongodb,
-    owner   => mongodb,
-    require => Package['mongodb'],
-  }
+  # file { $dir:
+  #   ensure  => directory,
+  #   group   => mongodb,
+  #   owner   => mongodb,
+  #   require => Package['mongodb'],
+  # }
 
   fstab { 'mongo_storage':
     ensure  => present,
