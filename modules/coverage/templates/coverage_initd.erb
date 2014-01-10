@@ -22,22 +22,31 @@ PIDFILE=/var/run/$NAME.pid
 DAEMON=<%= @gopath %>/bin/coverageservices
 DAEMON_OPTS="--config /etc/coverage.toml"
 
+start() {
+	echo -n "Recompiling ${NAME}"
+	/usr/bin/go install -v github.com/300brand/coverageservices || exit
+	echo "."
+	echo -n "Starting ${NAME}"
+	/sbin/start-stop-daemon --start --background --make-pidfile --pidfile $PIDFILE --exec $DAEMON -- $DAEMON_OPTS
+	echo "."
+}
+
+stop() {
+	echo -n "Stopping ${NAME}"
+	/sbin/start-stop-daemon --stop --oknodo --retry 30 --pidfile $PIDFILE
+	echo "."
+}
+
 case "$1" in
 	start)
-		echo -n "Starting ${NAME}"
-		/sbin/start-stop-daemon --start --background --make-pidfile --pidfile $PIDFILE --exec $DAEMON -- $DAEMON_OPTS
-		echo "."
+		start
 		;;
 	stop)
-		echo -n "Stopping ${NAME}"
-		/sbin/start-stop-daemon --stop --oknodo --pidfile $PIDFILE
-		echo "."
+		stop
 		;;
 	restart)
-		echo -n "Restarting ${NAME}"
-		/sbin/start-stop-daemon --stop --oknodo --retry 30 --pidfile $PIDFILE
-		/sbin/start-stop-daemon --start --background --make-pidfile --pidfile $PIDFILE --exec $DAEMON -- $DAEMON_OPTS
-		echo "."
+		stop
+		start
 		;;
 	*)
 		echo "Usage: $1 {start|stop|restart}"
