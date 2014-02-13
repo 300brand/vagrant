@@ -14,7 +14,8 @@ class coverage::service (
       notify => File['/etc/profile.d/gopath.sh'];
     '/etc/profile.d/gopath.sh':
       ensure  => file,
-      content => template('coverage/gopath.sh.erb');
+      content => template('coverage/gopath.sh.erb'),
+      mode    => '0644';
     '/etc/coverage.toml':
       ensure  => file,
       content => template('coverage/coverage.toml.erb'),
