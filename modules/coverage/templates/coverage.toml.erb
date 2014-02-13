@@ -46,18 +46,21 @@
 
 [Manager]
     enabled                    = true
-    startup                    = false
-    tick                       = "30s"
-    downloaddelay              = "-2h0m0s"
+    startup                    = true
+    [Manager.article]
+        tick                   = "15s"
+    [Manager.feed]
+        tick                   = "30s"
+        downloaddelay          = "-2h0m0s"
 
 [Publication]
     enabled                    = true
 
 [Search]
-    enabled                    = true
+    enabled                    = false
 
 [Social]
-    enabled                    = true
+    enabled                    = false
 
 [Stats]
     enabled                    = true
@@ -76,7 +79,7 @@
     prefix                     = "300brand_"
 
 [WebAPI]
-    enabled                    = true
+    enabled                    = false
     httplisten                 = ":8080"
 
 # Notes for setting up new storage units with different prefixes:
