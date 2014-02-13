@@ -17,6 +17,14 @@
 # Broadcast: 192.168.20.63
 # Hosts/Net: 30
 
+# PiPod Networking:
+#
+# Network:   192.168.20.64/27
+# HostMin:   192.168.20.65
+# HostMax:   192.168.20.94
+# Broadcast: 192.168.20.95
+# Hosts/Net: 30
+
 require 'ipaddr'
 require 'stringio'
 
@@ -211,20 +219,61 @@ configs = {
       'ip' => "192.168.20.20"
     },
     'annandale.dns.lowland.coverage.net' => {
-      # 'customize' => [
-      #   ["modifyvm", :id, "--memory", 128]
-      # ],
       'ip' => "192.168.20.20"
     },
   },
   "islay.coverage.net" => {
     'ardbeg.dns.islay.coverage.net' => {
-      # 'customize' => [
-      #   ["modifyvm", :id, "--memory", 128]
-      # ],
       'ip' => "192.168.20.21"
-    }
-  }
+    },
+    'bowmore.beanstalk.islay.coverage.net' => {
+      'ip' => "192.168.20.21"
+    },
+  },
+  "pipod00.coverage.net" => {
+    'rpi-0000.node.pipod00.coverage.net' => {
+      'ip' => "192.168.20.65"
+    },
+    'rpi-0001.node.pipod00.coverage.net' => {
+      'ip' => "192.168.20.66"
+    },
+    'rpi-0002.node.pipod00.coverage.net' => {
+      'ip' => "192.168.20.67"
+    },
+    'rpi-0003.node.pipod00.coverage.net' => {
+      'ip' => "192.168.20.68"
+    },
+    'rpi-0004.node.pipod00.coverage.net' => {
+      'ip' => "192.168.20.69"
+    },
+    'rpi-0005.node.pipod00.coverage.net' => {
+      'ip' => "192.168.20.70"
+    },
+    'rpi-0006.node.pipod00.coverage.net' => {
+      'ip' => "192.168.20.71"
+    },
+    'rpi-0007.node.pipod00.coverage.net' => {
+      'ip' => "192.168.20.72"
+    },
+    'rpi-0008.node.pipod00.coverage.net' => {
+      'ip' => "192.168.20.73"
+    },
+    'rpi-0009.node.pipod00.coverage.net' => {
+      'ip' => "192.168.20.74"
+    },
+    'rpi-000a.node.pipod00.coverage.net' => {
+      'ip' => "192.168.20.75"
+    },
+    'rpi-000b.node.pipod00.coverage.net' => {
+      'ip' => "192.168.20.76"
+    },
+    'rpi-000c.node.pipod00.coverage.net' => {
+      'ip' => "192.168.20.77"
+    },
+    'rpi-000d.node.pipod00.coverage.net' => {
+      'ip' => "192.168.20.78"
+    },
+  },
 }
 
 # Generate DNS configuration file

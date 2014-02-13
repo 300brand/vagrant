@@ -122,5 +122,69 @@ class coverage::dns::all {
       zone => 'coverage.net',
       data => ['192.168.20.21'],
       ptr  => false;
+    'bowmore.beanstalk.islay':
+      zone => 'coverage.net',
+      data => ['192.168.20.21'],
+      ptr  => false;
+    'pipod00':
+      zone => 'coverage.net',
+      data => ['192.168.20.22'],
+      ptr  => true;
+    'rpi-0000.node.pipod00':
+      zone => 'coverage.net',
+      data => ['192.168.20.65'],
+      ptr  => true;
+    'rpi-0001.node.pipod00':
+      zone => 'coverage.net',
+      data => ['192.168.20.66'],
+      ptr  => true;
+    'rpi-0002.node.pipod00':
+      zone => 'coverage.net',
+      data => ['192.168.20.67'],
+      ptr  => true;
+    'rpi-0003.node.pipod00':
+      zone => 'coverage.net',
+      data => ['192.168.20.68'],
+      ptr  => true;
+    'rpi-0004.node.pipod00':
+      zone => 'coverage.net',
+      data => ['192.168.20.69'],
+      ptr  => true;
+    'rpi-0005.node.pipod00':
+      zone => 'coverage.net',
+      data => ['192.168.20.70'],
+      ptr  => true;
+    'rpi-0006.node.pipod00':
+      zone => 'coverage.net',
+      data => ['192.168.20.71'],
+      ptr  => true;
+    'rpi-0007.node.pipod00':
+      zone => 'coverage.net',
+      data => ['192.168.20.72'],
+      ptr  => true;
+    'rpi-0008.node.pipod00':
+      zone => 'coverage.net',
+      data => ['192.168.20.73'],
+      ptr  => true;
+    'rpi-0009.node.pipod00':
+      zone => 'coverage.net',
+      data => ['192.168.20.74'],
+      ptr  => true;
+    'rpi-000a.node.pipod00':
+      zone => 'coverage.net',
+      data => ['192.168.20.75'],
+      ptr  => true;
+    'rpi-000b.node.pipod00':
+      zone => 'coverage.net',
+      data => ['192.168.20.76'],
+      ptr  => true;
+    'rpi-000c.node.pipod00':
+      zone => 'coverage.net',
+      data => ['192.168.20.77'],
+      ptr  => true;
+    'rpi-000d.node.pipod00':
+      zone => 'coverage.net',
+      data => ['192.168.20.78'],
+      ptr  => true;
   }
 }
