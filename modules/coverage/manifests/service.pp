@@ -4,12 +4,13 @@
 #
 class coverage::service (
   ){
-  $gopath = '/usr/share/go'
 
   file {
-    $gopath:
+    '/home/vagrant/go':
       ensure => directory,
       mode   => '0755',
+      owner  => 'vagrant',
+      group  => 'vagrant',
       notify => File['/etc/profile.d/gopath.sh'];
     '/etc/profile.d/gopath.sh':
       ensure  => file,
