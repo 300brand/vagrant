@@ -44,8 +44,8 @@ class coverage::mongo::shell {
     enable_10gen => true,
     configdb     => [
       'hazelburn.mongocfg.campbeltown.coverage.net',
-      'oldpulteney.mongocfg.highland.coverage.net',
-      'talisker.mongocfg.island.coverage.net',
+      # 'oldpulteney.mongocfg.highland.coverage.net',
+      # 'talisker.mongocfg.island.coverage.net',
     ],
     dbpath       => '/var/lib/mongodb',
     fork         => false,
