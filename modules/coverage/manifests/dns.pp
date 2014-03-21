@@ -36,5 +36,9 @@ class coverage::dns {
     'ns1':
       zone => 'coverage.net',
       data => ['127.0.0.1'];
+    '*.subscription':
+      zone => 'coverage.net',
+      data => ['192.168.20.65'],
+      ptr  => false;
   }
 }
