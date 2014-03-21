@@ -234,6 +234,9 @@ configs = {
     'rpi-0000.node.pipod00.coverage.net' => {
       'ip' => "192.168.20.65"
     },
+    '*.subscription.coverage.net' => {
+      'ip' => "192.168.20.65"
+    },
     'rpi-0001.node.pipod00.coverage.net' => {
       'ip' => "192.168.20.66"
     },

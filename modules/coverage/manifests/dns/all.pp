@@ -134,6 +134,10 @@ class coverage::dns::all {
       zone => 'coverage.net',
       data => ['192.168.20.65'],
       ptr  => true;
+    '*.subscription':
+      zone => 'coverage.net',
+      data => ['192.168.20.65'],
+      ptr  => true;
     'rpi-0001.node.pipod00':
       zone => 'coverage.net',
       data => ['192.168.20.66'],
