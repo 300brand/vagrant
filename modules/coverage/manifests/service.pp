@@ -35,12 +35,14 @@ class coverage::service (
       ensure  => file,
       content => template('coverage/supervisor_http.conf.erb'),
       mode    => '0644',
-      require => Package['supervisor'];
+      require => Package['supervisor'],
+      notify  => Service['supervisor'];
     '/etc/supervisor/conf.d/coverageservices.conf':
       ensure  => file,
       content => template('coverage/supervisor_coverage.conf.erb'),
       mode    => '0644',
-      require => Package['supervisor'];
+      require => Package['supervisor'],
+      notify  => Service['supervisor'];
     # '/etc/init.d/coverageservices':
     #   ensure  => file,
     #   content => template('coverage/coverage_initd.erb'),
