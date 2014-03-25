@@ -78,8 +78,8 @@ numprocs     = 1
 startretries = 3
 user         = vagrant
 
-[group:WebGroup]
-programs = Article,Feed,Manager,Social,Stats,StorageReader,StorageWriter
-
 [group:ProcessingGroup]
+programs = Article,Feed,Manager,Publication,Social,Stats,StorageReader,StorageWriter
+
+[group:WebGroup]
 programs = Search,WebAPI
