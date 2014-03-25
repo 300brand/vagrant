@@ -5,6 +5,17 @@
 class coverage::service (
   ){
 
+  package {
+    'libxml2-dev':
+      ensure => installed;
+    'pkg-config':
+      ensure => installed;
+    'libsqlite3-dev':
+      ensure => installed;
+    'supervisor':
+      ensure => installed;
+  }
+
   file {
     '/home/vagrant/go':
       ensure => directory,
@@ -20,16 +31,26 @@ class coverage::service (
       ensure  => file,
       content => template('coverage/coverage.toml.erb'),
       mode    => '0644';
-    '/etc/init.d/coverageservices':
+    '/etc/supervisor/conf.d/inet_http_server.conf':
       ensure  => file,
-      content => template('coverage/coverage_initd.erb'),
-      mode    => '0755';
+      content => template('coverage/supervisor_http.conf.erb'),
+      mode    => '0644',
+      require => Package['supervisor'];
+    '/etc/supervisor/conf.d/coverageservices.conf':
+      ensure  => file,
+      content => template('coverage/supervisor_coverage.conf.erb'),
+      mode    => '0644',
+      require => Package['supervisor'];
+    # '/etc/init.d/coverageservices':
+    #   ensure  => file,
+    #   content => template('coverage/coverage_initd.erb'),
+    #   mode    => '0755';
   }
 
-  exec { 'install_initd':
-    command   => '/usr/sbin/update-rc.d coverageservices defaults',
-    subscribe => File['/etc/init.d/coverageservices'],
-  }
+  # exec { 'install_initd':
+  #   command   => '/usr/sbin/update-rc.d coverageservices defaults',
+  #   subscribe => File['/etc/init.d/coverageservices'],
+  # }
 
   # vcsrepo { 'coverage':
   #   ensure   => latest,
@@ -104,17 +125,7 @@ class coverage::service (
   # # Establish dependency where all repos must update before recompiling
   # Vcsrepo <| tag == 'gocode' |> -> Exec['recompile']
 
-  package { 'libxml2-dev':
-    ensure => installed,
-  }
 
-  package { 'pkg-config':
-    ensure => installed,
-  }
-
-  package { 'libsqlite3-dev':
-    ensure => installed,
-  }
 
   # $service_pkg = 'github.com/300brand/coverageservices'
   # exec { 'recompile':

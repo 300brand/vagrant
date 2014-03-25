@@ -14,22 +14,22 @@
         stderr                 = false
         color                  = true
     [logging.debug]
-        file                   = "/tmp/coverage/debug.log"
+        file                   = ""
         stdout                 = true
         stderr                 = false
         color                  = true
     [logging.info]
-        file                   = "/tmp/coverage/info.log"
+        file                   = ""
         stdout                 = true
         stderr                 = false
         color                  = true
     [logging.warn]
-        file                   = "/tmp/coverage/warn.log"
+        file                   = ""
         stdout                 = true
         stderr                 = false
         color                  = true
     [logging.error]
-        file                   = "/tmp/coverage/error.log"
+        file                   = ""
         stdout                 = true
         stderr                 = false
         color                  = true
@@ -42,13 +42,13 @@
 #     timing                     = true
 
 [Article]
-    enabled                    = true
+    enabled                    = false
 
 [Feed]
-    enabled                    = true
+    enabled                    = false
 
 [Manager]
-    enabled                    = true
+    enabled                    = false
     startup                    = true
     [Manager.article]
         tick                   = "15s"
@@ -57,7 +57,7 @@
         downloaddelay          = "-2h0m0s"
 
 [Publication]
-    enabled                    = true
+    enabled                    = false
 
 [Search]
     enabled                    = false
@@ -66,18 +66,18 @@
     enabled                    = false
 
 [Stats]
-    enabled                    = true
+    enabled                    = false
     rate                       = 1
     reconnect                  = "10m"
     statsd                     = "ailsabay.stats.lowland.coverage.net:8125"
 
 [StorageReader]
-    enabled                    = true
+    enabled                    = false
     mongodb                    = "localhost"
     prefix                     = "300brand_"
 
 [StorageWriter]
-    enabled                    = true
+    enabled                    = false
     mongodb                    = "localhost"
     prefix                     = "300brand_"
 

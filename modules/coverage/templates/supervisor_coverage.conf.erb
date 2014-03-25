@@ -1,0 +1,85 @@
+[program:Article]
+autostart    = false
+autorestart  = unexpected
+command      = /home/vagrant/go/bin/coverageservices -config=/etc/coverage.toml -pprof.listen=:6061 -Article.enabled=true
+numprocs     = 1
+startretries = 3
+user         = vagrant
+
+[program:Feed]
+autostart    = false
+autorestart  = unexpected
+command      = /home/vagrant/go/bin/coverageservices -config=/etc/coverage.toml -pprof.listen=:6062 -Feed.enabled=true
+numprocs     = 1
+startretries = 3
+user         = vagrant
+
+[program:Manager]
+autostart    = false
+autorestart  = unexpected
+command      = /home/vagrant/go/bin/coverageservices -config=/etc/coverage.toml -pprof.listen=:6063 -Manager.enabled=true
+numprocs     = 1
+startretries = 3
+user         = vagrant
+
+[program:Publication]
+autostart    = false
+autorestart  = unexpected
+command      = /home/vagrant/go/bin/coverageservices -config=/etc/coverage.toml -pprof.listen=:6064 -Publication.enabled=true
+numprocs     = 1
+startretries = 3
+user         = vagrant
+
+[program:Search]
+autostart    = false
+autorestart  = unexpected
+command      = /home/vagrant/go/bin/coverageservices -config=/etc/coverage.toml -pprof.listen=:6065 -Search.enabled=true
+numprocs     = 1
+startretries = 3
+user         = vagrant
+
+[program:Social]
+autostart    = false
+autorestart  = unexpected
+command      = /home/vagrant/go/bin/coverageservices -config=/etc/coverage.toml -pprof.listen=:6066 -Social.enabled=true
+numprocs     = 1
+startretries = 3
+user         = vagrant
+
+[program:Stats]
+autostart    = false
+autorestart  = unexpected
+command      = /home/vagrant/go/bin/coverageservices -config=/etc/coverage.toml -pprof.listen=:6067 -Stats.enabled=true
+numprocs     = 1
+startretries = 3
+user         = vagrant
+
+[program:StorageReader]
+autostart    = false
+autorestart  = unexpected
+command      = /home/vagrant/go/bin/coverageservices -config=/etc/coverage.toml -pprof.listen=:6068 -StorageReader.enabled=true
+numprocs     = 1
+startretries = 3
+user         = vagrant
+
+[program:StorageWriter]
+autostart    = false
+autorestart  = unexpected
+command      = /home/vagrant/go/bin/coverageservices -config=/etc/coverage.toml -pprof.listen=:6069 -StorageWriter.enabled=true
+numprocs     = 1
+startretries = 3
+user         = vagrant
+
+[program:WebAPI]
+autostart    = false
+autorestart  = unexpected
+command      = /home/vagrant/go/bin/coverageservices -config=/etc/coverage.toml -pprof.listen=:6070 -WebAPI.enabled=true
+numprocs     = 1
+startretries = 3
+user         = vagrant
+
+[group:WebGroup]
+programs = Article,Feed,Manager,Social,Stats,StorageReader,StorageWriter
+
+[group:ProcessingGroup]
+programs = Search,WebAPI
