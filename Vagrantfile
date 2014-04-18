@@ -94,6 +94,11 @@ configs = {
         ["modifyvm", :id, "--memory", node_memory]
       ],
       'ip' => "192.168.20.53"
+    },
+    'mysql.mysql.campbeltown.coverage.net' => {
+      'customize' => [
+        ],
+      'ip' => "192.168.20.54"
     }
   },
   "highland.coverage.net" => {
