@@ -3,7 +3,7 @@
 # DNS definitions for the coverage.net domain
 #
 class coverage::mysql {
-  class { 'mysql':
+  class { '::mysql::server':
     users => {
       'spider@%' => {
         ensure                   => 'present',
