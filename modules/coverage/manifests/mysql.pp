@@ -3,7 +3,7 @@
 # DNS definitions for the coverage.net domain
 #
 class coverage::mysql {
-  class { 'puppetlabs::mysql':
+  class { 'mysql':
     users => {
       'spider@%' => {
         ensure                   => 'present',
