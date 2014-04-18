@@ -38,6 +38,10 @@ class coverage::dns::all {
       zone => 'coverage.net',
       data => ['192.168.20.53'],
       ptr  => true;
+    'mysql.mysql.campbeltown':
+      zone => 'coverage.net',
+      data => ['192.168.20.54'],
+      ptr  => true;
     'highland':
       zone => 'coverage.net',
       data => ['192.168.20.18'],
