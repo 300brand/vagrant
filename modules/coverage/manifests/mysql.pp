@@ -4,6 +4,11 @@
 #
 class coverage::mysql {
   class { '::mysql::server':
+    override_options => {
+      'mysqld' => {
+        'bind-address' => '0.0.0.0',
+      }
+    },
     users => {
       'spider@%' => {
         ensure                   => 'present',
