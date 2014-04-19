@@ -31,14 +31,14 @@ class coverage::mysql {
       'spider@%/spider.*' => {
         ensure     => 'present',
         options    => ['GRANT'],
-        privileges => ['SELECT', 'INSERT', 'UPDATE', 'DELETE'],
-        table      => 'somedb.*',
+        privileges => ['SELECT', 'INSERT', 'UPDATE', 'DELETE', 'CREATE'],
+        table      => 'spider.*',
         user       => 'spider@%',
       },
       'admin@%/*' => {
         ensure     => 'present',
         options    => ['GRANT'],
-        privileges => ['SELECT', 'INSERT', 'UPDATE', 'DELETE'],
+        privileges => ['SELECT', 'INSERT', 'UPDATE', 'DELETE', 'CREATE'],
         table      => '*.*',
         user       => 'admin@%',
       },
